@@ -13,7 +13,7 @@ class BuildExistingModelTest < MiniTest::Test
     require 'parallel'
     runners = []
     num_rows = 16
-    Parallel.each([*1..num_rows], in_threads: 8) do |building_id|
+    Parallel.each([*1..num_rows], in_threads: 96) do |building_id|
       puts "#{building_id} / #{num_rows}"
       args_hash = {}
       args_hash["workflow_json"] = "measure-info.json"
