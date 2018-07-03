@@ -18,15 +18,13 @@ class BuildExistingModelTest < MiniTest::Test
     num_nodes, num_cores = nodes_and_cores_counts
     
     if num_nodes > 1
-      require 'mpi'
-      world = MPI::Comm::WORLD
-      node_rank = world.rank
 
+      node_rank = ENV["PBS_ARRAYID"].to_i
       split_csv(buildstock_csv, num_nodes)
       new_buildstock_csv = File.join(File.dirname(buildstock_csv), "#{node_rank}_buildstock.csv")
       
     else
-      node_rank = 0
+      node_rank = 1
       new_buildstock_csv = buildstock_csv
     end
     
@@ -35,6 +33,8 @@ class BuildExistingModelTest < MiniTest::Test
       building_ids << sample[0]
     end
 
+    puts "Node Rank: #{node_rank}"
+    puts "Num Cores: #{num_cores}"
     Parallel.each(building_ids, in_processors: num_cores) do |building_id|
       puts "Building ID: #{building_id}"
       args_hash = {}
@@ -42,7 +42,10 @@ class BuildExistingModelTest < MiniTest::Test
       args_hash["number_of_buildings_represented"] = "80000000"
       args_hash["building_id"] = "#{building_id}"
       args_hash["buildstock_csv"] = File.basename(new_buildstock_csv)
-      runners << _test_measure(args_hash)
+      begin
+        runners << _test_measure(args_hash)
+      rescue
+      end
     end
 
     CSV.open(File.join(File.dirname(__FILE__), "#{node_rank}_results.csv"), "w") do |csv|
@@ -71,7 +74,7 @@ class BuildExistingModelTest < MiniTest::Test
     size = (file.readlines.size / num_nodes).ceil
 
     (1..num_nodes).each do |i|
-      new_filename = File.join(File.dirname(filename), "#{i-1}_#{File.basename(filename)}")
+      new_filename = File.join(File.dirname(filename), "#{i}_#{File.basename(filename)}")
       unless File.exist? new_filename
         CSV.open(new_filename, "w") do |csv|
           counter = 0
