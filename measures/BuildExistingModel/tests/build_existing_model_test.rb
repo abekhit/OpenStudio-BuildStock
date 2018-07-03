@@ -12,8 +12,13 @@ class BuildExistingModelTest < MiniTest::Test
     # but exports the registered values to csv BEFORE running any simulations
     require 'parallel'
     runners = []
-    num_rows = 16
-    Parallel.each([*1..num_rows], in_threads: 96) do |building_id|
+    characteristics_dir = File.absolute_path(File.join(File.dirname(__FILE__), "..", "..", "..", "lib", "housing_characteristics"))
+    buildstock_csv = File.absolute_path(File.join(characteristics_dir, "buildstock.csv"))
+    num_rows = 0
+    CSV.foreach(buildstock_csv, headers:true) do |sample|
+      num_rows += 1
+    end
+    Parallel.each([*1..num_rows], in_threads: processor_count) do |building_id|
       puts "#{building_id} / #{num_rows}"
       args_hash = {}
       args_hash["workflow_json"] = "measure-info.json"
@@ -40,6 +45,24 @@ class BuildExistingModelTest < MiniTest::Test
   end
 
   private
+  
+  def processor_count
+    case RbConfig::CONFIG['host_os']
+    when /darwin9/
+      `hwprefs cpu_count`.to_i
+    when /darwin/
+      ((`which hwprefs` != '') ? `hwprefs thread_count` : `sysctl -n hw.ncpu`).to_i
+    when /linux/
+      `cat /proc/cpuinfo | grep processor | wc -l`.to_i
+    when /freebsd/
+      `sysctl -n hw.ncpu`.to_i
+    when /mswin|mingw/
+      require 'win32ole'
+      wmi = WIN32OLE.connect("winmgmts://")
+      cpu = wmi.ExecQuery("select NumberOfCores from Win32_Processor")
+      cpu.to_enum.first.NumberOfCores
+    end
+  end
   
   def _test_measure(args_hash, num_infos=0, num_warnings=0)
     # create an instance of the measure

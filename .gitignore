@@ -79,3 +79,4 @@ test/reports
 /measures/UtilityBillCalculations/resources/tariffs
 
 coverage
+lib/housing_characteristics/buildstock.csv
