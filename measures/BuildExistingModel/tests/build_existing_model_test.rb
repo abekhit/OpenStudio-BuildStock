@@ -16,13 +16,12 @@ class BuildExistingModelTest < MiniTest::Test
     characteristics_dir = File.absolute_path(File.join(File.dirname(__FILE__), "..", "..", "..", "lib", "housing_characteristics"))
     buildstock_csv = File.absolute_path(File.join(characteristics_dir, "buildstock.csv"))
     num_nodes, num_cores = nodes_and_cores_counts
-    
-    if num_nodes > 1
 
+    puts "Num Nodes: #{num_nodes}"    
+    if num_nodes > 1
       node_rank = ENV["PBS_ARRAYID"].to_i
       split_csv(buildstock_csv, num_nodes)
-      new_buildstock_csv = File.join(File.dirname(buildstock_csv), "#{node_rank}_buildstock.csv")
-      
+      new_buildstock_csv = File.join(File.dirname(buildstock_csv), "#{node_rank}_buildstock.csv")      
     else
       node_rank = 1
       new_buildstock_csv = buildstock_csv
@@ -30,11 +29,12 @@ class BuildExistingModelTest < MiniTest::Test
     
     building_ids = []
     CSV.foreach(new_buildstock_csv, headers:true) do |sample|
-      building_ids << sample[0]
+      building_ids << sample[0].to_i
     end
 
-    puts "Node Rank: #{node_rank}"
+    puts "Current Node Rank: #{node_rank}"
     puts "Num Cores: #{num_cores}"
+    puts "Building IDs: #{building_ids.length}"
     Parallel.each(building_ids, in_processors: num_cores) do |building_id|
       puts "Building ID: #{building_id}"
       args_hash = {}
@@ -97,9 +97,13 @@ class BuildExistingModelTest < MiniTest::Test
   def nodes_and_cores_counts
     case RbConfig::CONFIG['host_os']
     when /linux/
-      num_nodes = ENV["PBS_NUM_NODES"].to_i
+      puts "Platform: linux"
+      # num_nodes = `cat $PBS_NODEFILE | wc -l`.to_i
+      num_nodes = 2
+      puts "PBS_NODEFILE: #{num_nodes} nodes"
       num_cores = `cat /proc/cpuinfo | grep processor | wc -l`.to_i
     when /mswin|mingw/
+      puts "Platform: mswin, mingw"
       num_nodes = 1
       require 'win32ole'
       wmi = WIN32OLE.connect("winmgmts://")
