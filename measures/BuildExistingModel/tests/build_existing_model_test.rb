@@ -27,6 +27,7 @@ class BuildExistingModelTest < MiniTest::Test
       new_buildstock_csv = buildstock_csv
     end
     
+    sleep 2
     building_ids = []
     CSV.foreach(new_buildstock_csv, headers:true) do |sample|
       building_ids << sample[0].to_i
@@ -34,9 +35,19 @@ class BuildExistingModelTest < MiniTest::Test
 
     puts "Current Node Rank: #{node_rank}"
     puts "Num Cores: #{num_cores}"
-    puts "Building IDs: #{building_ids.length}"
-    Parallel.each(building_ids, in_processors: num_cores) do |building_id|
-      puts "Building ID: #{building_id}"
+    puts "Num Building IDs: #{building_ids.length}"
+
+    results_filename = File.join(File.dirname(__FILE__), "#{node_rank}_results.csv")
+
+    if File.exists? results_filename
+
+      puts "File #{results_filename} already exists."
+      return
+
+    end      
+
+    Parallel.each(building_ids, in_processors: num_cores, progress: "Progress Update") do |building_id|
+      puts "\nBuilding ID: #{building_id}"
       args_hash = {}
       args_hash["workflow_json"] = "measure-info.json"
       args_hash["number_of_buildings_represented"] = "80000000"
@@ -48,22 +59,26 @@ class BuildExistingModelTest < MiniTest::Test
       end
     end
 
-    CSV.open(File.join(File.dirname(__FILE__), "#{node_rank}_results.csv"), "w") do |csv|
-      row = []
-      result = runners[0].result
-      result.stepValues.each do |arg|
-        row << arg.name
-      end
-      csv << row
-      runners.each do |runner|
+    unless runners.empty?
+      puts "Writing #{results_filename}."
+      CSV.open(results_filename, "w") do |csv|
         row = []
-        result = runner.result
+        result = runners[0].result
         result.stepValues.each do |arg|
-          row << arg.valueAsVariant.to_s
+          row << arg.name
         end
         csv << row
+        runners.each do |runner|
+          row = []
+          result = runner.result
+          result.stepValues.each do |arg|
+            row << arg.valueAsVariant.to_s
+          end
+          csv << row
+        end
       end
     end
+
   end
 
   private
@@ -98,9 +113,8 @@ class BuildExistingModelTest < MiniTest::Test
     case RbConfig::CONFIG['host_os']
     when /linux/
       puts "Platform: linux"
-      # num_nodes = `cat $PBS_NODEFILE | wc -l`.to_i
-      num_nodes = 2
-      puts "PBS_NODEFILE: #{num_nodes} nodes"
+      num_nodes = ENV["NUM_NODES"].to_i
+      puts "From Env Var: #{num_nodes} Nodes"
       num_cores = `cat /proc/cpuinfo | grep processor | wc -l`.to_i
     when /mswin|mingw/
       puts "Platform: mswin, mingw"
