@@ -43,8 +43,9 @@ class BuildExistingModelTest < MiniTest::Test
       puts "File #{results_filename} already exists."
       return
 
-    end      
+    end
 
+    header = []
     Parallel.each(building_ids, in_processors: num_cores, progress: "Progress Update") do |building_id|
       puts "\nBuilding ID: #{building_id}"
       args_hash = {}
@@ -53,28 +54,33 @@ class BuildExistingModelTest < MiniTest::Test
       args_hash["building_id"] = "#{building_id}"
       args_hash["buildstock_csv"] = File.basename(new_buildstock_csv)
       begin
-        runners << _test_measure(args_hash)
-      rescue
-      end
-    end
-
-    unless runners.empty?
-      puts "Writing #{results_filename}."
-      CSV.open(results_filename, "w") do |csv|
-        row = []
-        result = runners[0].result
-        result.stepValues.each do |arg|
-          row << arg.name
-        end
-        csv << row
-        runners.each do |runner|
+        runner = _test_measure(args_hash)
+        result = runner.result
+        CSV.open(File.join(File.dirname(__FILE__), "id_#{building_id}.csv"), "w") do |csv|
+          if header.empty?
+            result.stepValues.each do |arg|
+              header << arg.name
+            end
+          end
           row = []
-          result = runner.result
           result.stepValues.each do |arg|
             row << arg.valueAsVariant.to_s
           end
           csv << row
         end
+      rescue
+      end
+    end
+
+    puts "Writing #{results_filename}."
+    CSV.open(results_filename, "w") do |csv|
+      csv << header
+      ids = Dir[File.join(File.dirname(__FILE__), "id_*.csv")]
+      ids.each do |id|
+        CSV.foreach(id) do |row|
+          csv << row
+        end
+        File.delete(id)
       end
     end
 
