@@ -17,17 +17,16 @@ class BuildExistingModelTest < MiniTest::Test
     buildstock_csv = File.absolute_path(File.join(characteristics_dir, "buildstock.csv"))
     num_nodes, num_cores = nodes_and_cores_counts
 
-    puts "Num Nodes: #{num_nodes}"    
+    puts "Num Nodes: #{num_nodes}"
     if num_nodes > 1
       node_rank = ENV["PBS_ARRAYID"].to_i
       split_csv(buildstock_csv, num_nodes)
-      new_buildstock_csv = File.join(File.dirname(buildstock_csv), "#{node_rank}_buildstock.csv")      
+      new_buildstock_csv = File.join(File.dirname(buildstock_csv), "#{node_rank}_buildstock.csv")
     else
       node_rank = 1
       new_buildstock_csv = buildstock_csv
     end
-    
-    sleep 2
+
     building_ids = []
     CSV.foreach(new_buildstock_csv, headers:true) do |sample|
       building_ids << sample[0].to_i
@@ -113,8 +112,11 @@ class BuildExistingModelTest < MiniTest::Test
     case RbConfig::CONFIG['host_os']
     when /linux/
       puts "Platform: linux"
-      num_nodes = ENV["NUM_NODES"].to_i
-      puts "From Env Var: #{num_nodes} Nodes"
+      num_nodes = 1
+      if ENV.keys.include? "NUM_NODES"
+        num_nodes = ENV["NUM_NODES"].to_i
+        puts "From Env Var: #{num_nodes} Nodes"
+      end
       num_cores = `cat /proc/cpuinfo | grep processor | wc -l`.to_i
     when /mswin|mingw/
       puts "Platform: mswin, mingw"
