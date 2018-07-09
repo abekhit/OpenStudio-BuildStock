@@ -48,15 +48,21 @@ class BuildExistingModelTest < MiniTest::Test
     header = []
     Parallel.each(building_ids, in_processors: num_cores, progress: "Progress Update") do |building_id|
       puts "\nBuilding ID: #{building_id}"
+      if File.exists? File.join(File.dirname(__FILE__), "id_#{building_id}.csv")
+        puts "Building ID = #{building_id} has already been run."
+        unless building_ids[0] == building_id # ensure you get the header
+          next
+        end
+      end
       args_hash = {}
       args_hash["workflow_json"] = "measure-info.json"
       args_hash["number_of_buildings_represented"] = "80000000"
       args_hash["building_id"] = "#{building_id}"
       args_hash["buildstock_csv"] = File.basename(new_buildstock_csv)
-      begin
-        runner = _test_measure(args_hash)
-        result = runner.result
-        CSV.open(File.join(File.dirname(__FILE__), "id_#{building_id}.csv"), "w") do |csv|
+      CSV.open(File.join(File.dirname(__FILE__), "id_#{building_id}.csv"), "w") do |csv|
+        begin
+          runner = _test_measure(args_hash)
+          result = runner.result
           if header.empty?
             result.stepValues.each do |arg|
               header << arg.name
@@ -67,8 +73,16 @@ class BuildExistingModelTest < MiniTest::Test
             row << arg.valueAsVariant.to_s
           end
           csv << row
+        rescue
+          CSV.foreach(new_buildstock_csv) do |sample|
+            if header.empty?
+              header = sample
+            else
+              next unless building_id == sample[0].to_i
+              csv << sample
+            end
+          end
         end
-      rescue
       end
     end
 
@@ -77,6 +91,8 @@ class BuildExistingModelTest < MiniTest::Test
       csv << header
       ids = Dir[File.join(File.dirname(__FILE__), "id_*.csv")]
       ids.each do |id|
+        building_id = File.basename(id).gsub("id_", "").gsub(".csv", "").to_i
+        next unless building_ids.include? building_id
         CSV.foreach(id) do |row|
           csv << row
         end
