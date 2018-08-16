@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_hot_water_heater_tank</name>
   <uid>0f2214ac-12ca-4350-9942-8d1fb1277608</uid>
-  <version_id>28e8bac1-e12f-42c2-a7b6-6ff6bdca0d6e</version_id>
-  <version_modified>20180803T210244Z</version_modified>
+  <version_id>787f33b8-9092-48d0-9b24-f199b16ffd27</version_id>
+  <version_modified>20180815T155552Z</version_modified>
   <xml_checksum>9882CBDB</xml_checksum>
   <class_name>ResidentialHotWaterHeaterTank</class_name>
   <display_name>Set Residential Tank Water Heater</display_name>
@@ -269,7 +269,7 @@
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>AA9588B3</checksum>
+      <checksum>5785A300</checksum>
     </file>
   </files>
 </measure>

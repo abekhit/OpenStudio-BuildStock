@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_airflow</name>
   <uid>7d2adf5c-9995-49be-b662-a23d2452bb36</uid>
-  <version_id>6f70f667-a7fa-4df8-b5a0-fb5d8601fe33</version_id>
-  <version_modified>20180803T210242Z</version_modified>
+  <version_id>4edd3a94-a736-4ccb-a35f-1af4750f6b0f</version_id>
+  <version_modified>20180815T155550Z</version_modified>
   <xml_checksum>19EEDBBB</xml_checksum>
   <class_name>ResidentialAirflow</class_name>
   <display_name>Set Residential Airflow</display_name>
@@ -860,7 +860,7 @@
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>AA9588B3</checksum>
+      <checksum>5785A300</checksum>
     </file>
   </files>
 </measure>

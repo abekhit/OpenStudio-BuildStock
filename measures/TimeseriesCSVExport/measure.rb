@@ -248,8 +248,9 @@ class TimeseriesCSVExport < OpenStudio::Measure::ReportingMeasure
       end
     end
 
-    # Get the timestamps for actual year epw file
+    # Get the timestamps for actual year epw file, and the number of intervals per hour
     actual_timestamps = WeatherProcess.actual_timestamps(model, runner, File.dirname(__FILE__))
+    records_per_hour = WeatherProcess.records_per_hour(model, runner, File.dirname(__FILE__))
     
     date_times = []
     cols = []
@@ -300,14 +301,14 @@ class TimeseriesCSVExport < OpenStudio::Measure::ReportingMeasure
           date_times << "Time"
         end
         if cols.empty?
-          if reporting_frequency == "Hourly"
-            if actual_timestamps.empty?
-              date_times << format_datetime(date_time.to_s) # timestamps from the sqlfile (TMY)
-            else
-              date_times << actual_timestamps[i] # timestamps from the epw (AMY)
-            end
+          if actual_timestamps.empty?
+            date_times << format_datetime(date_time.to_s) # timestamps from the sqlfile (TMY)
           else
-            date_times << i+1
+            if ( reporting_frequency == "Hourly" and records_per_hour == 1 ) or ( reporting_frequency == "Timestep" and records_per_hour != 1 )
+              date_times << actual_timestamps[i] # timestamps from the epw (AMY)
+            else
+              date_times << i+1 # TODO: change from reporting integers to appropriate timestamps
+            end
           end
         end
         y_val = values[i]

@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_hot_water_fixtures</name>
   <uid>6159fd36-6bfa-4907-9200-9cb852d50799</uid>
-  <version_id>8d254c85-9db0-41bf-b8b0-d65c8891ef53</version_id>
-  <version_modified>20180803T210244Z</version_modified>
+  <version_id>d06a38ea-c15c-4a9e-a8ab-a2bcac221e39</version_id>
+  <version_modified>20180815T155551Z</version_modified>
   <xml_checksum>A6ACD89C</xml_checksum>
   <class_name>ResidentialHotWaterFixtures</class_name>
   <display_name>Set Residential Hot Water Fixtures</display_name>
@@ -287,7 +287,7 @@
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>AA9588B3</checksum>
+      <checksum>5785A300</checksum>
     </file>
   </files>
 </measure>

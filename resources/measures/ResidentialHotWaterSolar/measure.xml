@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_hot_water_solar</name>
   <uid>b969f216-f3c0-4301-9b85-34ce2b45f551</uid>
-  <version_id>cd473daa-680e-4ea4-b119-940e63b42e49</version_id>
-  <version_modified>20180803T210245Z</version_modified>
+  <version_id>d2b95620-9fb3-4ad1-a02e-978ce6b5867a</version_id>
+  <version_modified>20180815T155552Z</version_modified>
   <xml_checksum>F33F6E26</xml_checksum>
   <class_name>ResidentialHotWaterSolar</class_name>
   <display_name>Set Residential Solar Water Heating</display_name>
@@ -323,7 +323,7 @@
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>AA9588B3</checksum>
+      <checksum>5785A300</checksum>
     </file>
   </files>
 </measure>

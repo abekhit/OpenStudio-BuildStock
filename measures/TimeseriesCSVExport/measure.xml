@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>timeseries_csv_export</name>
   <uid>2a3442c1-944d-4e91-9e11-11e0cf368c64</uid>
-  <version_id>7449c7c4-8af9-461f-8423-3b931ccf4a49</version_id>
-  <version_modified>20180803T211348Z</version_modified>
+  <version_id>33b1bfce-b1a6-4d64-8ef9-7b9f6eb08f66</version_id>
+  <version_modified>20180815T185448Z</version_modified>
   <xml_checksum>15BF4E57</xml_checksum>
   <class_name>TimeseriesCSVExport</class_name>
   <display_name>Timeseries CSV Export</display_name>
@@ -127,17 +127,6 @@
       <checksum>3BCB1148</checksum>
     </file>
     <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.0.5</identifier>
-        <min_compatible>2.0.5</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>36B1F872</checksum>
-    </file>
-    <file>
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -147,7 +136,18 @@
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>AA9588B3</checksum>
+      <checksum>5785A300</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.5</identifier>
+        <min_compatible>2.0.5</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>236AF811</checksum>
     </file>
   </files>
 </measure>

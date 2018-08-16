@@ -5,7 +5,7 @@ require "#{File.dirname(__FILE__)}/unit_conversions"
 class WeatherHeader
   def initialize
   end
-  ATTRS ||= [:City, :State, :Country, :DataSource, :Station, :Latitude, :Longitude, :Timezone, :Altitude, :LocalPressure]
+  ATTRS ||= [:City, :State, :Country, :DataSource, :Station, :Latitude, :Longitude, :Timezone, :Altitude, :LocalPressure, :RecordsPerHour]
   attr_accessor(*ATTRS)
 end
 
@@ -106,6 +106,12 @@ class WeatherProcess
     end
     return []
   end
+
+  def self.records_per_hour(model, runner, measure_dir)
+    epw_path = get_epw_path(model, runner, measure_dir)
+    epw_file = OpenStudio::EpwFile.new(epw_path)
+    return epw_file.recordsPerHour
+  end
   
   def error?
     return @error
@@ -141,7 +147,7 @@ class WeatherProcess
       if ['City','State','Country','DataSource','Station'].include? k
         unit.setFeature("EPWHeader#{k}", @header.send(k).to_s)
       # double
-      elsif ['Latitude','Longitude','Timezone','Altitude','LocalPressure'].include? k
+      elsif ['Latitude','Longitude','Timezone','Altitude','LocalPressure','RecordsPerHour'].include? k
         unit.setFeature("EPWHeader#{k}", @header.send(k).to_f)
       else
         @runner.registerError("Weather header key #{k} not handled.")
@@ -224,7 +230,7 @@ class WeatherProcess
             return false if !@header.send(k).is_initialized
             @header.send(k+"=", @header.send(k).get)
           # double
-          elsif ['Latitude','Longitude','Timezone','Altitude','LocalPressure'].include? k
+          elsif ['Latitude','Longitude','Timezone','Altitude','LocalPressure','RecordsPerHour'].include? k
             @header.send(k+"=", unit.getFeatureAsDouble("EPWHeader#{k}"))
             return false if !@header.send(k).is_initialized
             @header.send(k+"=", @header.send(k).get)
@@ -289,69 +295,70 @@ class WeatherProcess
         @header.Timezone = epw_file.timeZone
         @header.Altitude = UnitConversions.convert(epw_file.elevation,"m","ft")
         @header.LocalPressure = Math::exp(-0.0000368 * @header.Altitude) # atm
+        @header.RecordsPerHour = epw_file.recordsPerHour
 
         epw_file_data = epw_file.data
         
         @design, epwHasDesignData = get_design_info_from_epw(@design, epw_file, @header.Altitude)
 
         # Timeseries data:        
-        hourdata = []
+        rowdata = []
         dailydbs = []
         dailyhighdbs = []
         dailylowdbs = []
-        epw_file_data.each_with_index do |epwdata, hournum|
+        epw_file_data.each_with_index do |epwdata, rownum|
 
-          hourdict = {}
-          hourdict['month'] = epwdata.month
-          hourdict['day'] = epwdata.day
-          hourdict['hour'] = epwdata.hour
+          rowdict = {}
+          rowdict['month'] = epwdata.month
+          rowdict['day'] = epwdata.day
+          rowdict['hour'] = epwdata.hour
           if epwdata.dryBulbTemperature.is_initialized
-            hourdict['db'] = epwdata.dryBulbTemperature.get
+            rowdict['db'] = epwdata.dryBulbTemperature.get
           else
-            @runner.registerError("Cannot retrieve dryBulbTemperature from the EPW for hour #{hournum+1}.")
+            @runner.registerError("Cannot retrieve dryBulbTemperature from the EPW for hour #{rownum+1}.")
             @error = true
           end
           if epwdata.dewPointTemperature.is_initialized
-            hourdict['dp'] = epwdata.dewPointTemperature.get
+            rowdict['dp'] = epwdata.dewPointTemperature.get
           else
-            @runner.registerError("Cannot retrieve dewPointTemperature from the EPW for hour #{hournum+1}.")
+            @runner.registerError("Cannot retrieve dewPointTemperature from the EPW for hour #{rownum+1}.")
             @error = true
           end
           if epwdata.relativeHumidity.is_initialized
-            hourdict['rh'] = epwdata.relativeHumidity.get / 100.0
+            rowdict['rh'] = epwdata.relativeHumidity.get / 100.0
           else
-            @runner.registerError("Cannot retrieve relativeHumidity from the EPW for hour #{hournum+1}.")
+            @runner.registerError("Cannot retrieve relativeHumidity from the EPW for hour #{rownum+1}.")
             @error = true
           end
           if epwdata.directNormalRadiation.is_initialized
-            hourdict['dirnormal'] = epwdata.directNormalRadiation.get # W/m^2
+            rowdict['dirnormal'] = epwdata.directNormalRadiation.get # W/m^2
           else
-            @runner.registerError("Cannot retrieve directNormalRadiation from the EPW for hour #{hournum+1}.")
+            @runner.registerError("Cannot retrieve directNormalRadiation from the EPW for hour #{rownum+1}.")
             @error = true
           end
           if epwdata.diffuseHorizontalRadiation.is_initialized
-            hourdict['diffhoriz'] = epwdata.diffuseHorizontalRadiation.get # W/m^2
+            rowdict['diffhoriz'] = epwdata.diffuseHorizontalRadiation.get # W/m^2
           else
-            @runner.registerError("Cannot retrieve diffuseHorizontalRadiation from the EPW for hour #{hournum+1}.")
+            @runner.registerError("Cannot retrieve diffuseHorizontalRadiation from the EPW for hour #{rownum+1}.")
             @error = true
           end
           if epwdata.windSpeed.is_initialized
-            hourdict['ws'] = epwdata.windSpeed.get
+            rowdict['ws'] = epwdata.windSpeed.get
           else
-            @runner.registerError("Cannot retrieve windSpeed from the EPW for hour #{hournum+1}.")
+            @runner.registerError("Cannot retrieve windSpeed from the EPW for hour #{rownum+1}.")
             @error = true
           end
           if @error
             return
           end
-          hourdata << hourdict
+          rowdata << rowdict
 
-          if (hournum + 1) % 24 == 0
+          if (rownum + 1) % ( 24 * @header.RecordsPerHour ) == 0
 
             db = []
-            maxdb = hourdata[hourdata.length - 24]['db']
-            mindb = hourdata[hourdata.length - 24]['db']
-            hourdata[hourdata.length - 24..-1].each do |x|
+            maxdb = rowdata[rowdata.length - ( 24 * @header.RecordsPerHour )]['db']
+            mindb = rowdata[rowdata.length - ( 24 * @header.RecordsPerHour )]['db']
+            rowdata[rowdata.length - ( 24 * @header.RecordsPerHour )..-1].each do |x|
               if x['db'] > maxdb
                 maxdb = x['db']
               end
@@ -361,7 +368,7 @@ class WeatherProcess
               db << x['db']
             end
 
-            dailydbs << db.inject{ |sum, n| sum + n } / 24.0
+            dailydbs << db.inject{ |sum, n| sum + n } / ( 24.0 * @header.RecordsPerHour )
             dailyhighdbs << maxdb
             dailylowdbs << mindb
 
@@ -369,21 +376,21 @@ class WeatherProcess
 
         end
 
-        @data = calc_annual_drybulbs(@data, hourdata)
-        @data = calc_monthly_drybulbs(@data, hourdata)
-        @data = calc_heat_cool_degree_days(@data, hourdata, dailydbs)
+        @data = calc_annual_drybulbs(@data, rowdata)
+        @data = calc_monthly_drybulbs(@data, rowdata)
+        @data = calc_heat_cool_degree_days(@data, rowdata, dailydbs)
         @data = calc_avg_highs_lows(@data, dailyhighdbs, dailylowdbs)
-        @data = calc_avg_windspeed(@data, hourdata)
+        @data = calc_avg_windspeed(@data, rowdata)
         @data = calc_ground_temperatures(@data)
         @data.WSF = get_ashrae_622_wsf(@header.Station)
         
         if not epwHasDesignData
           @runner.registerWarning("No design condition info found; calculating design conditions from EPW weather data.")
-          @design = calc_design_info(@design, hourdata, @header.Altitude)
+          @design = calc_design_info(@design, rowdata, @header.Altitude, @header.RecordsPerHour)
           @design.DailyTemperatureRange = @data.MonthlyAvgDailyHighDrybulbs[7] - @data.MonthlyAvgDailyLowDrybulbs[7]
         end
         
-        @design = calc_design_solar_radiation(@design, hourdata)
+        @design = calc_design_solar_radiation(@design, rowdata)
 
       end
 
@@ -402,7 +409,7 @@ class WeatherProcess
           db << x['db']
         end
 
-        data.AnnualAvgDrybulb = UnitConversions.convert(db.inject{ |sum, n| sum + n } / 8760.0,"C","F")
+        data.AnnualAvgDrybulb = UnitConversions.convert(db.inject{ |sum, n| sum + n } / db.length,"C","F")
 
         # Peak temperatures:
         data.AnnualMinDrybulb = UnitConversions.convert(mindict['db'],"C","F")
@@ -436,7 +443,7 @@ class WeatherProcess
         hd.each do |x|
           ws << x['ws']
         end
-        avgws = ws.inject{ |sum, n| sum + n } / 8760.0
+        avgws = ws.inject{ |sum, n| sum + n } / ws.length
         data.AnnualAvgWindspeed = avgws
         return data
       end
@@ -497,22 +504,22 @@ class WeatherProcess
         return data
       end
       
-      def calc_design_solar_radiation(design, hourdata)
+      def calc_design_solar_radiation(design, rowdata)
         # Calculate cooling design day info, for roof surface sol air temperature, which is used for attic temperature calculation for Manual J/ASHRAE Std 152: 
         # Max summer direct normal solar radiation
         # Diffuse horizontal solar radiation during hour with max direct normal
-        summer_hourdata = []
+        summer_rowdata = []
         months = [6,7,8,9]
-        for hr in 0..(hourdata.size - 1)
-            next if not months.include?(hourdata[hr]['month'])
-            summer_hourdata << hourdata[hr]
+        for hr in 0..(rowdata.size - 1)
+            next if not months.include?(rowdata[hr]['month'])
+            summer_rowdata << rowdata[hr]
         end
         
         r_d = (1 + Math::cos(26.565052 * Math::PI / 180 ))/2 # Correct diffuse horizontal for tilt. Assume 6:12 roof pitch for this calculation.
-        max_solar_radiation_hour = summer_hourdata[0]
-        for hr in 1..(summer_hourdata.size - 1)
-            next if summer_hourdata[hr]['dirnormal'] + summer_hourdata[hr]['diffhoriz'] * r_d < max_solar_radiation_hour['dirnormal'] + max_solar_radiation_hour['diffhoriz'] * r_d
-            max_solar_radiation_hour = summer_hourdata[hr]
+        max_solar_radiation_hour = summer_rowdata[0]
+        for hr in 1..(summer_rowdata.size - 1)
+            next if summer_rowdata[hr]['dirnormal'] + summer_rowdata[hr]['diffhoriz'] * r_d < max_solar_radiation_hour['dirnormal'] + max_solar_radiation_hour['diffhoriz'] * r_d
+            max_solar_radiation_hour = summer_rowdata[hr]
         end
         
         design.CoolingDirectNormal = max_solar_radiation_hour['dirnormal']
@@ -585,7 +592,7 @@ class WeatherProcess
         return design, epwHasDesignData
       end
       
-      def calc_design_info(design, hourdata, altitude)
+      def calc_design_info(design, rowdata, altitude, records_per_hour)
         # Calculate design day info: 
         # - Heating 99% drybulb
         # - Heating mean coincident windspeed 
@@ -595,13 +602,13 @@ class WeatherProcess
         # - Cooling mean coincident humidity ratio
         
         std_press = Psychrometrics.Pstd_fZ(altitude)
-        annual_hd_sorted_by_db = hourdata.sort_by { |x| x['db'] }
-        annual_hd_sorted_by_dp = hourdata.sort_by { |x| x['dp'] }
+        annual_hd_sorted_by_db = rowdata.sort_by { |x| x['db'] }
+        annual_hd_sorted_by_dp = rowdata.sort_by { |x| x['dp'] }
         
         # 1%/99%/2% values
-        heat99per_db = annual_hd_sorted_by_db[88]['db']
-        cool01per_db = annual_hd_sorted_by_db[8673]['db']
-        dehum02per_dp = annual_hd_sorted_by_dp[8584]['dp']
+        heat99per_db = annual_hd_sorted_by_db[88*records_per_hour]['db']
+        cool01per_db = annual_hd_sorted_by_db[8673*records_per_hour]['db']
+        dehum02per_dp = annual_hd_sorted_by_dp[8584*records_per_hour]['dp']
         
         # Mean coincident values for cooling
         cool_windspeed = []

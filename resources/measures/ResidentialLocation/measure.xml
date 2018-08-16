@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>set_residential_epw_file</name>
   <uid>16ac2c0c-6177-4bf2-91a5-1b6e8de4e85b</uid>
-  <version_id>4349f799-9e74-4b5f-a72e-5d749623e688</version_id>
-  <version_modified>20180803T210247Z</version_modified>
+  <version_id>a044178c-3988-4d13-ac91-65f1e933218a</version_id>
+  <version_modified>20180815T161450Z</version_modified>
   <xml_checksum>D8922A73</xml_checksum>
   <class_name>SetResidentialEPWFile</class_name>
   <display_name>Set Residential Location</display_name>
@@ -45,6 +45,32 @@
       <required>true</required>
       <model_dependent>false</model_dependent>
       <default_value>October 26</default_value>
+    </argument>
+    <argument>
+      <name>timesteps_per_hr</name>
+      <display_name>Simulation Timesteps Per Hour</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>6</default_value>
+      <choices>
+        <choice>
+          <value>60</value>
+          <display_name>60</display_name>
+        </choice>
+        <choice>
+          <value>6</value>
+          <display_name>6</display_name>
+        </choice>
+        <choice>
+          <value>4</value>
+          <display_name>4</display_name>
+        </choice>
+        <choice>
+          <value>2</value>
+          <display_name>2</display_name>
+        </choice>
+      </choices>
     </argument>
   </arguments>
   <outputs/>
@@ -106,12 +132,6 @@
       <checksum>208441EA</checksum>
     </file>
     <file>
-      <filename>set_location_test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>D5C4BDA2</checksum>
-    </file>
-    <file>
       <filename>util.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -148,6 +168,12 @@
       <checksum>6CB6B3D8</checksum>
     </file>
     <file>
+      <filename>set_location_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>3D604012</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>1.11.5</identifier>
@@ -156,13 +182,13 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>A045AC8C</checksum>
+      <checksum>1D75F48F</checksum>
     </file>
     <file>
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>AA9588B3</checksum>
+      <checksum>5785A300</checksum>
     </file>
   </files>
 </measure>
