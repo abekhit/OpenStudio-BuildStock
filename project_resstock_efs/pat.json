@@ -7,7 +7,7 @@
   "analysis_type": "Algorithmic",
   "remoteSettings": {
     "open": true,
-    "remoteType": "Existing Remote Server",
+    "remoteType": "Amazon Cloud",
     "remoteServerURL": "http://ec2-18-209-44-78.compute-1.amazonaws.com/",
     "aws": {
       "cluster_name": "resstock",
@@ -27,7 +27,7 @@
         "cost": "$1.68/hr"
       },
       "user_id": "jrobert1",
-      "worker_node_number": 2,
+      "worker_node_number": 1,
       "aws_tags": [],
       "cluster_status": "terminated",
       "openstudio_server_version": {
@@ -212,7 +212,7 @@
             "variableSetting": "Pivot",
             "distribution": "Integer Sequence",
             "discreteVariables": [],
-            "maximum": 13891,
+            "maximum": 1259,
             "minimum": 1,
             "mean": 0,
             "deltaX": 0,
@@ -306,7 +306,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.6135676010147211,
+      "instanceId": 0.22077710064348333,
       "skip": false,
       "$$hashKey": "object:2655",
       "showWarningText": false,
@@ -1191,7 +1191,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.27089131791041443,
+      "instanceId": 0.5336599934084827,
       "skip": false,
       "$$hashKey": "object:12583",
       "outputMeasure": true,
@@ -2747,7 +2747,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.9150635304243269,
+      "instanceId": 0.5080286028117111,
       "skip": false,
       "$$hashKey": "object:39763",
       "outputMeasure": true,
@@ -3598,7 +3598,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.03744684308271551,
+      "instanceId": 0.24805828404157793,
       "skip": false,
       "$$hashKey": "object:4212"
     },
@@ -3644,7 +3644,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.00667942745356509,
+      "instanceId": 0.9128404038841893,
       "skip": false,
       "$$hashKey": "object:657521",
       "outputMeasure": false
