@@ -27,7 +27,7 @@
         "cost": "$1.68/hr"
       },
       "user_id": "jrobert1",
-      "worker_node_number": 1,
+      "worker_node_number": 4,
       "aws_tags": [],
       "cluster_status": "running",
       "openstudio_server_version": {
@@ -306,7 +306,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.45559102706990284,
+      "instanceId": 0.998198968049774,
       "skip": false,
       "$$hashKey": "object:2655",
       "showWarningText": false,
@@ -1191,7 +1191,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.8588637769248388,
+      "instanceId": 0.20233917785930733,
       "skip": false,
       "$$hashKey": "object:12583",
       "outputMeasure": true,
@@ -2747,7 +2747,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.0749832869082383,
+      "instanceId": 0.2335999146224088,
       "skip": false,
       "$$hashKey": "object:39763",
       "outputMeasure": true,
@@ -3598,7 +3598,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.2539851606198644,
+      "instanceId": 0.37735566326601,
       "skip": false,
       "$$hashKey": "object:4212"
     },
@@ -3644,7 +3644,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.21281575457086577,
+      "instanceId": 0.05351627957711602,
       "skip": false,
       "$$hashKey": "object:657521",
       "outputMeasure": false
