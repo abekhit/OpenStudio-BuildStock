@@ -212,7 +212,7 @@
             "variableSetting": "Pivot",
             "distribution": "Integer Sequence",
             "discreteVariables": [],
-            "maximum": 15150,
+            "maximum": 43698,
             "minimum": 1,
             "mean": 0,
             "deltaX": 0,
@@ -306,7 +306,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.0011734049677820657,
+      "instanceId": 0.7689517340091832,
       "skip": false,
       "$$hashKey": "object:2655",
       "showWarningText": false,
@@ -1191,7 +1191,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.7274983376509139,
+      "instanceId": 0.9292723084868804,
       "skip": false,
       "$$hashKey": "object:12583",
       "outputMeasure": true,
@@ -2747,7 +2747,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.04516091242916587,
+      "instanceId": 0.23947754882528005,
       "skip": false,
       "$$hashKey": "object:39763",
       "outputMeasure": true,
@@ -3598,9 +3598,10 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.5338949845418779,
+      "instanceId": 0.018066141090871568,
       "skip": false,
-      "$$hashKey": "object:4212"
+      "$$hashKey": "object:4212",
+      "outputMeasure": false
     },
     {
       "measure_dir": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_efs\\measures\\ServerDirectoryCleanup",
@@ -3644,7 +3645,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.888802365538959,
+      "instanceId": 0.4349124772420636,
       "skip": false,
       "$$hashKey": "object:657521",
       "outputMeasure": false
@@ -3674,7 +3675,7 @@
     "worker_initialization": {
       "file": "datapoint_init.sh",
       "arguments": [
-        "https://s3.amazonaws.com/epwweatherfiles/smartds_20180823_2012_hourly.zip"
+        "https://s3.amazonaws.com/epwweatherfiles/la100_v3_2012_hourly.zip"
       ]
     },
     "worker_finalization": {
@@ -3683,6 +3684,6 @@
     }
   },
   "designAlternatives": [],
-  "analysisID": null,
+  "analysisID": "",
   "datapoints": []
 }
