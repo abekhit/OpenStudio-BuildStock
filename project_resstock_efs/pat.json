@@ -7,7 +7,7 @@
   "analysis_type": "Algorithmic",
   "remoteSettings": {
     "open": true,
-    "remoteType": "Existing Remote Server",
+    "remoteType": "Amazon Cloud",
     "remoteServerURL": "http://ec2-54-87-228-25.compute-1.amazonaws.com/",
     "aws": {
       "cluster_name": "resstock",
@@ -27,9 +27,9 @@
         "cost": "$1.68/hr"
       },
       "user_id": "jrobert1",
-      "worker_node_number": 5,
+      "worker_node_number": 4,
       "aws_tags": [],
-      "cluster_status": "terminated",
+      "cluster_status": "running",
       "openstudio_server_version": {
         "name": "2.6.0",
         "notes": null,
@@ -212,7 +212,7 @@
             "variableSetting": "Pivot",
             "distribution": "Integer Sequence",
             "discreteVariables": [],
-            "maximum": 43698,
+            "maximum": 12621,
             "minimum": 1,
             "mean": 0,
             "deltaX": 0,
@@ -306,7 +306,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.7689517340091832,
+      "instanceId": 0.7270623222166137,
       "skip": false,
       "$$hashKey": "object:2655",
       "showWarningText": false,
@@ -1191,7 +1191,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.9292723084868804,
+      "instanceId": 0.624092844459794,
       "skip": false,
       "$$hashKey": "object:12583",
       "outputMeasure": true,
@@ -2747,7 +2747,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.23947754882528005,
+      "instanceId": 0.26922492706874257,
       "skip": false,
       "$$hashKey": "object:39763",
       "outputMeasure": true,
@@ -3598,7 +3598,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.018066141090871568,
+      "instanceId": 0.4801856362372001,
       "skip": false,
       "$$hashKey": "object:4212",
       "outputMeasure": false
@@ -3645,7 +3645,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.4349124772420636,
+      "instanceId": 0.2471816485084637,
       "skip": false,
       "$$hashKey": "object:657521",
       "outputMeasure": false
@@ -3684,6 +3684,6 @@
     }
   },
   "designAlternatives": [],
-  "analysisID": "",
+  "analysisID": null,
   "datapoints": []
 }
