@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_photovoltaics</name>
   <uid>3ed7d5e0-4441-43d9-a47e-ae4560a6db92</uid>
-  <version_id>113972fa-2188-4a0a-a7d8-3e372b31c450</version_id>
-  <version_modified>20180815T155554Z</version_modified>
+  <version_id>8a913194-59d5-42b8-b46b-a05a60cd21c5</version_id>
+  <version_modified>20180911T171523Z</version_modified>
   <xml_checksum>1BFC8ABF</xml_checksum>
   <class_name>ResidentialPhotovoltaics</class_name>
   <display_name>Set Residential Photovoltaics</display_name>
@@ -223,49 +223,49 @@
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>6CB6B3D8</checksum>
+      <checksum>81550F14</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver_North.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>DB2DB520</checksum>
+      <checksum>D49DD351</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver_West.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>033FB738</checksum>
+      <checksum>D050330F</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>16EF3149</checksum>
+      <checksum>B6376054</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver_East.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>3515CF5D</checksum>
+      <checksum>94F7CFBA</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_FB_UA_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>8A7EC7BD</checksum>
+      <checksum>A9FD6AE7</checksum>
     </file>
     <file>
       <filename>MF_8units_1story_SL_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>9F2689FA</checksum>
+      <checksum>67ACC15B</checksum>
     </file>
     <file>
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>5785A300</checksum>
+      <checksum>08503965</checksum>
     </file>
   </files>
 </measure>

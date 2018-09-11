@@ -3,7 +3,7 @@
 
 require "#{File.dirname(__FILE__)}/resources/constants"
 require "#{File.dirname(__FILE__)}/resources/location"
-require "#{File.dirname(__FILE__)}/resources/simulation"
+
 
 # start the measure
 class SetResidentialEPWFile < OpenStudio::Measure::ModelMeasure
@@ -51,17 +51,6 @@ class SetResidentialEPWFile < OpenStudio::Measure::ModelMeasure
     arg.setDefaultValue("October 26")
     args << arg
 
-    #make an argument for the simulation timesteps per hour
-    arg_chs = OpenStudio::StringVector.new
-    arg_chs << "60"
-    arg_chs << "6"
-    arg_chs << "4"
-    arg_chs << "2"
-    arg = OpenStudio::Measure::OSArgument::makeChoiceArgument("timesteps_per_hr", arg_chs, true)
-    arg.setDisplayName("Simulation Timesteps Per Hour")
-    arg.setDefaultValue("6")
-    args << arg
-
     return args
   end
 
@@ -79,16 +68,11 @@ class SetResidentialEPWFile < OpenStudio::Measure::ModelMeasure
     weather_file_name = runner.getStringArgumentValue("weather_file_name", user_arguments)
     dst_start_date = runner.getStringArgumentValue("dst_start_date", user_arguments)
     dst_end_date = runner.getStringArgumentValue("dst_end_date", user_arguments)
-    timesteps_per_hr = runner.getStringArgumentValue("timesteps_per_hr",user_arguments)
     
     unless (Pathname.new weather_directory).absolute?
       weather_directory = File.expand_path(File.join(File.dirname(__FILE__), weather_directory))
     end
     weather_file_path = File.join(weather_directory, weather_file_name)
-    
-    # TODO: Could break this out into a separate measure with arguments
-    success = Simulation.apply(model, runner, timesteps_per_hr.to_i)
-    return false if not success
 
     success, weather = Location.apply(model, runner, weather_file_path, dst_start_date, dst_end_date)
     return false if not success

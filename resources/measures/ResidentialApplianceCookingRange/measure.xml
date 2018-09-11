@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_cooking_range</name>
   <uid>68bdcee3-c301-4fe9-a99f-c7d8b5930c89</uid>
-  <version_id>2a0449f1-fc7f-4c69-8f99-c3205e4cdb2b</version_id>
-  <version_modified>20180815T155550Z</version_modified>
+  <version_id>4cc17c4b-ea30-4155-ab50-be686c92331a</version_id>
+  <version_modified>20180911T171519Z</version_modified>
   <xml_checksum>25A40D75</xml_checksum>
   <class_name>ResidentialCookingRange</class_name>
   <display_name>Set Residential Cooking Range</display_name>
@@ -209,37 +209,37 @@
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>6CB6B3D8</checksum>
+      <checksum>81550F14</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_FB_GRG_UA_3Beds_2Baths.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>687FC235</checksum>
+      <checksum>55AB4052</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_UB_UA_3Beds_2Baths_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>9CB9C834</checksum>
+      <checksum>DA230859</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_FB_UA_3Beds_2Baths_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>9B9A880A</checksum>
+      <checksum>3A7840A7</checksum>
     </file>
     <file>
       <filename>MF_8units_1story_SL_3Beds_2Baths_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>AB7F7F4A</checksum>
+      <checksum>E8D10FEE</checksum>
     </file>
     <file>
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>5785A300</checksum>
+      <checksum>08503965</checksum>
     </file>
   </files>
 </measure>

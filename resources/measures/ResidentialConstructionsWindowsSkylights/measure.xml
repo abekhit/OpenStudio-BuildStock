@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>process_constructions_windows_skylights</name>
   <uid>648dc42f-f079-4d97-913e-6dc3e19560b1</uid>
-  <version_id>15f66540-7b74-4942-8a80-983b2b77df1b</version_id>
-  <version_modified>20180815T155551Z</version_modified>
+  <version_id>60e40196-5904-434d-81b8-f4dcca424262</version_id>
+  <version_modified>20180911T171520Z</version_modified>
   <xml_checksum>6FAFA9DE</xml_checksum>
   <class_name>ProcessConstructionsWindowsSkylights</class_name>
   <display_name>Set Residential Window Construction</display_name>
@@ -184,31 +184,31 @@
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>6CB6B3D8</checksum>
+      <checksum>81550F14</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Windows.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>0A9268B7</checksum>
+      <checksum>0E4FD1D3</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver_Windows.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>8C213ED4</checksum>
+      <checksum>DE237D0D</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_FA_Denver_Windows_Skylights.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>1125CEAC</checksum>
+      <checksum>E82CB1ED</checksum>
     </file>
     <file>
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>5785A300</checksum>
+      <checksum>08503965</checksum>
     </file>
   </files>
 </measure>

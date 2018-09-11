@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>process_constructions_finished_basement</name>
   <uid>4b37c726-d6c4-473b-990a-0923c302ed36</uid>
-  <version_id>f2d8503f-f31b-43d8-9828-7f79b50630ba</version_id>
-  <version_modified>20180802T211503Z</version_modified>
+  <version_id>35e0c6af-3da8-4dcb-b881-fbee17286fbe</version_id>
+  <version_modified>20180911T170013Z</version_modified>
   <xml_checksum>1E963D9C</xml_checksum>
   <class_name>ProcessConstructionsFinishedBasement</class_name>
   <display_name>Set Residential Finished Basement Constructions</display_name>
@@ -189,34 +189,34 @@
       <checksum>D8B04DC5</checksum>
     </file>
     <file>
-      <filename>SFD_1000sqft_1story_FB_GRG_UA_DoorArea.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>AF5F4AD4</checksum>
-    </file>
-    <file>
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>6CB6B3D8</checksum>
+      <checksum>81550F14</checksum>
+    </file>
+    <file>
+      <filename>SFD_1000sqft_1story_FB_GRG_UA_DoorArea.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>A5AFFFBB</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_FB_UA.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>6A3B56C7</checksum>
-    </file>
-    <file>
-      <filename>SFA_4units_1story_FB_UA_3Beds_2Baths_Denver.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>9B9A880A</checksum>
+      <checksum>33B0F6F9</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_FB_GRG_UA.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>BD0B2248</checksum>
+      <checksum>18C5B417</checksum>
+    </file>
+    <file>
+      <filename>SFA_4units_1story_FB_UA_3Beds_2Baths_Denver.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>3A7840A7</checksum>
     </file>
   </files>
 </measure>
