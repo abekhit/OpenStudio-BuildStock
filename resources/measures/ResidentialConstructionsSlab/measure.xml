@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>process_constructions_slab</name>
   <uid>4fd36916-5b69-43d2-a7bb-e7fad34508db</uid>
-  <version_id>8457038e-cd02-4311-b212-e78dd7526fb7</version_id>
-  <version_modified>20180802T211504Z</version_modified>
+  <version_id>2c3234c0-f5df-4e82-87b8-79b7a0bc4bfc</version_id>
+  <version_modified>20180911T170014Z</version_modified>
   <xml_checksum>1E963D9C</xml_checksum>
   <class_name>ProcessConstructionsSlab</class_name>
   <display_name>Set Residential Slab Construction</display_name>
@@ -137,40 +137,40 @@
       <checksum>D8B04DC5</checksum>
     </file>
     <file>
-      <filename>SFD_2000sqft_2story_SL_GRG_UA_Windows_Doors.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>33E2F385</checksum>
-    </file>
-    <file>
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>6CB6B3D8</checksum>
+      <checksum>81550F14</checksum>
+    </file>
+    <file>
+      <filename>SFD_2000sqft_2story_SL_GRG_UA_Windows_Doors.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>D4ACC1A3</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>15F12CD3</checksum>
-    </file>
-    <file>
-      <filename>MF_8units_1story_SL_3Beds_2Baths_Denver.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>AB7F7F4A</checksum>
+      <checksum>692AB227</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_SL_UA_3Beds_2Baths_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>CF53BDD9</checksum>
+      <checksum>0AF24D99</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_GRG_UA.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>81005BBE</checksum>
+      <checksum>E6F0CF4F</checksum>
+    </file>
+    <file>
+      <filename>MF_8units_1story_SL_3Beds_2Baths_Denver.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>E8D10FEE</checksum>
     </file>
   </files>
 </measure>

@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>process_constructions_doors</name>
   <uid>b78f10fa-b38d-4de2-86e9-344a78e68847</uid>
-  <version_id>a8be34e4-2bb1-4d55-8757-579f127eb9e6</version_id>
-  <version_modified>20180802T211503Z</version_modified>
+  <version_id>744184cf-817b-4220-8b2a-6e6b029de6eb</version_id>
+  <version_modified>20180911T170013Z</version_modified>
   <xml_checksum>6FAFA9DE</xml_checksum>
   <class_name>ProcessConstructionsDoors</class_name>
   <display_name>Set Residential Door Construction</display_name>
@@ -90,13 +90,13 @@
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>6CB6B3D8</checksum>
+      <checksum>81550F14</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_GRG_UA_Windows_Doors.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>6C7F2D49</checksum>
+      <checksum>D4ACC1A3</checksum>
     </file>
   </files>
 </measure>
