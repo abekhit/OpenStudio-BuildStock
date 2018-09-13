@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_clothes_dryer</name>
   <uid>0ed6fb35-c3e0-4a33-a397-ce4cec92d96e</uid>
-  <version_id>bab93e22-6734-40bd-a9ac-35bd1f65f982</version_id>
-  <version_modified>20180911T171519Z</version_modified>
+  <version_id>0a6b8288-4e3e-4fdd-97d6-445a25e05211</version_id>
+  <version_modified>20180912T200518Z</version_modified>
   <xml_checksum>25A40D75</xml_checksum>
   <class_name>ResidentialClothesDryer</class_name>
   <display_name>Set Residential Clothes Dryer</display_name>
@@ -186,12 +186,6 @@
       <checksum>82D32FEE</checksum>
     </file>
     <file>
-      <filename>constants.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>3BCB1148</checksum>
-    </file>
-    <file>
       <filename>geometry.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -204,40 +198,46 @@
       <checksum>81550F14</checksum>
     </file>
     <file>
+      <filename>constants.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>374E311F</checksum>
+    </file>
+    <file>
       <filename>SFD_2000sqft_2story_FB_GRG_UA_3Beds_2Baths_Denver_WHTank_ClothesWasher.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>9D093F83</checksum>
+      <checksum>A5090BFE</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_FB_GRG_UA_3Beds_2Baths.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>55AB4052</checksum>
+      <checksum>1C6529C5</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_UB_UA_3Beds_2Baths_Denver_WHTank_ClothesWasher.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>695619E0</checksum>
+      <checksum>F424AFEF</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_FB_UA_3Beds_2Baths_Denver_WHTank_ClothesWasher.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>04855DE2</checksum>
+      <checksum>4DD8EBFE</checksum>
     </file>
     <file>
       <filename>MF_8units_1story_SL_3Beds_2Baths_Denver_WHTank_ClothesWasher.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>F58EC0B8</checksum>
+      <checksum>FAEB57B0</checksum>
     </file>
     <file>
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>08503965</checksum>
+      <checksum>F6A37FF6</checksum>
     </file>
   </files>
 </measure>

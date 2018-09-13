@@ -383,7 +383,7 @@ class WeatherProcess
         
         if not epwHasDesignData
           @runner.registerWarning("No design condition info found; calculating design conditions from EPW weather data.")
-          @design = calc_design_info(@design, rowdata, @header.Altitude, @header.RecordsPerHour)
+          calc_design_info(rowdata)
           @design.DailyTemperatureRange = @data.MonthlyAvgDailyHighDrybulbs[7] - @data.MonthlyAvgDailyLowDrybulbs[7]
         end
         
@@ -514,7 +514,7 @@ class WeatherProcess
         @design.CoolingDiffuseHorizontal = max_solar_radiation_hour['diffhoriz']
       end
 
-      def get_ashrae_622_wsf(wmo)
+      def get_ashrae_622_wsf
         # Looks up the ASHRAE 62.2 weather and shielding factor from ASHRAE622WSF
         # for the specified WMO station number. If not found, uses the average value 
         # in the file.
@@ -545,7 +545,7 @@ class WeatherProcess
           
         wsfs = []
         ashrae_dict.each do |adict|
-          if adict['TMY3'] == wmo
+          if adict['TMY3'] == @header.Station
             return adict['wsf'].to_f
           end
           wsfs << adict['wsf'].to_f
@@ -553,7 +553,7 @@ class WeatherProcess
         
         # Value not found, use average
         wsf_avg = wsfs.inject{ |sum, n| sum + n } / wsfs.length
-        @runner.registerWarning("ASHRAE 62.2 WSF not found for station number #{wmo.to_s}, using the national average value of #{wsf_avg.round(3).to_s} instead.")
+        @runner.registerWarning("ASHRAE 62.2 WSF not found for station number #{@header.Station.to_s}, using the national average value of #{wsf_avg.round(3).to_s} instead.")
         return wsf_avg
             
       end
@@ -579,7 +579,8 @@ class WeatherProcess
         return epwHasDesignData
       end
       
-      def calc_design_info(rowdata, altitude, records_per_hour)
+      def calc_design_info(rowdata)
+
         # Calculate design day info: 
         # - Heating 99% drybulb
         # - Heating mean coincident windspeed 
@@ -588,14 +589,14 @@ class WeatherProcess
         # - Cooling mean coincident wetbulb
         # - Cooling mean coincident humidity ratio
         
-        std_press = Psychrometrics.Pstd_fZ(altitude)
+        std_press = Psychrometrics.Pstd_fZ(@header.Altitude)
         annual_hd_sorted_by_db = rowdata.sort_by { |x| x['db'] }
         annual_hd_sorted_by_dp = rowdata.sort_by { |x| x['dp'] }
         
         # 1%/99%/2% values
-        heat99per_db = annual_hd_sorted_by_db[88*records_per_hour]['db']
-        cool01per_db = annual_hd_sorted_by_db[8673*records_per_hour]['db']
-        dehum02per_dp = annual_hd_sorted_by_dp[8584*records_per_hour]['dp']
+        heat99per_db = annual_hd_sorted_by_db[88*@header.RecordsPerHour]['db']
+        cool01per_db = annual_hd_sorted_by_db[8673*@header.RecordsPerHour]['db']
+        dehum02per_dp = annual_hd_sorted_by_dp[8584*@header.RecordsPerHour]['dp']
         
         # Mean coincident values for cooling
         cool_windspeed = []

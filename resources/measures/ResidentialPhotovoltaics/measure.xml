@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_photovoltaics</name>
   <uid>3ed7d5e0-4441-43d9-a47e-ae4560a6db92</uid>
-  <version_id>8a913194-59d5-42b8-b46b-a05a60cd21c5</version_id>
-  <version_modified>20180911T171523Z</version_modified>
+  <version_id>30c825ef-116d-4bd0-a27b-6b250af0bee5</version_id>
+  <version_modified>20180912T200523Z</version_modified>
   <xml_checksum>1BFC8ABF</xml_checksum>
   <class_name>ResidentialPhotovoltaics</class_name>
   <display_name>Set Residential Photovoltaics</display_name>
@@ -208,12 +208,6 @@
       <checksum>82D32FEE</checksum>
     </file>
     <file>
-      <filename>constants.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>3BCB1148</checksum>
-    </file>
-    <file>
       <filename>geometry.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -226,46 +220,52 @@
       <checksum>81550F14</checksum>
     </file>
     <file>
+      <filename>constants.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>374E311F</checksum>
+    </file>
+    <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver_North.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>D49DD351</checksum>
+      <checksum>DF93CBA6</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver_West.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>D050330F</checksum>
+      <checksum>BF4AB43D</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>B6376054</checksum>
+      <checksum>B076DC61</checksum>
     </file>
     <file>
       <filename>SFD_2000sqft_2story_SL_UA_Denver_East.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>94F7CFBA</checksum>
+      <checksum>9A809786</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_FB_UA_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>A9FD6AE7</checksum>
+      <checksum>BD20AC4F</checksum>
     </file>
     <file>
       <filename>MF_8units_1story_SL_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>67ACC15B</checksum>
+      <checksum>252D6357</checksum>
     </file>
     <file>
       <filename>weather.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>08503965</checksum>
+      <checksum>F6A37FF6</checksum>
     </file>
   </files>
 </measure>

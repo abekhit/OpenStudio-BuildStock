@@ -466,8 +466,6 @@ Heating Fuel	None	ResidentialAirflow	has_hvac_flue=false
 Heating Fuel	Other Fuel	ResidentialAirflow	has_hvac_flue=false																																												
 Heating Fuel	Wood	ResidentialAirflow	has_hvac_flue=false																																												
 Heating Fuel	Propane																																														
-Simulation Controls	"10-Minutely, Annual"	ResidentialSimulationControls	timesteps_per_hr=6	begin_month=1	begin_day_of_month=1	end_month=12	end_day_of_month=31																																								
-Simulation Controls	"15-Minutely, Annual"	ResidentialSimulationControls	timesteps_per_hr=4	begin_month=1	begin_day_of_month=1	end_month=12	end_day_of_month=31																																								
 Usage Level	Low																																														
 Usage Level	Medium																																														
 Usage Level	High																																														
