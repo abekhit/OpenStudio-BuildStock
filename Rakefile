@@ -1,12 +1,23 @@
-require 'bundler'
 require 'rake'
 require 'rake/testtask'
-Bundler.setup
 
-desc 'Copy measures/osms from OpenStudio-BEopt repo'
+desc 'Copy files from OpenStudio-BEopt repo'
 task :copy_beopt_files do
   require 'fileutils'
-  require 'openstudio'
+
+  files = Dir[File.join(File.dirname(__FILE__), "*.zip")]
+  if files.length > 1
+    return
+  end
+  branch = File.basename(files[0]).gsub("OpenStudio-BEopt-", "").gsub(".zip", "")
+  
+  copy_beopt_files(branch)
+
+end
+
+desc 'Download and copy files from OpenStudio-BEopt repo'
+task :download_and_copy_beopt_files do
+  require 'fileutils'  
   require 'net/http'
   require 'openssl'
 
@@ -15,9 +26,9 @@ task :copy_beopt_files do
   if branch.empty?
     branch = "master"
   end
-  
-  if File.exists? File.join(File.dirname(__FILE__), "#{branch}.zip")
-    FileUtils.rm(File.join(File.dirname(__FILE__), "#{branch}.zip"))
+
+  if File.exists? File.join(File.dirname(__FILE__), "OpenStudio-BEopt-#{branch}.zip")
+    FileUtils.rm(File.join(File.dirname(__FILE__), "OpenStudio-BEopt-#{branch}.zip"))
   end
 
   url = URI.parse("https://codeload.github.com/NREL/OpenStudio-BEopt/zip/#{branch}")
@@ -36,7 +47,7 @@ task :copy_beopt_files do
     end
     size = 0
     progress = 0
-    open "#{branch}.zip", 'wb' do |io|
+    open "OpenStudio-BEopt-#{branch}.zip", 'wb' do |io|
       response.read_body do |chunk|
         io.write chunk
         size += chunk.size
@@ -48,14 +59,31 @@ task :copy_beopt_files do
       end
     end
   end
+  
+  copy_beopt_files(branch, beopt_measures_dir, buildstock_resource_measures_dir)
 
-  puts "Extracting latest residential measures..."
-  unzip_file = OpenStudio::UnzipFile.new(File.join(File.dirname(__FILE__), "#{branch}.zip"))
-  unzip_file.extractAllFiles(OpenStudio::toPath(File.join(File.dirname(__FILE__), branch)))
+end
 
+def copy_beopt_files(branch)
+  require 'openstudio'
   beopt_measures_dir = File.join(File.dirname(__FILE__), branch, "OpenStudio-BEopt-#{branch}", "measures")
   buildstock_resource_measures_dir = File.join(File.dirname(__FILE__), "resources", "measures")
-  
+  extract_measures(branch)
+  copy_resources(branch)
+  clean_out(buildstock_resource_measures_dir)
+  copy_measures(beopt_measures_dir, buildstock_resource_measures_dir)
+  copy_other_measures(beopt_measures_dir)
+  clean_up(branch)
+end
+
+def extract_measures(branch)
+  puts "Extracting latest residential measures..."
+  unzip_file = OpenStudio::UnzipFile.new(File.join(File.dirname(__FILE__), "OpenStudio-BEopt-#{branch}.zip"))
+  unzip_file.extractAllFiles(OpenStudio::toPath(File.join(File.dirname(__FILE__), branch)))
+  return unzip_file
+end
+
+def copy_resources(branch)
   # Copy seed osm and other needed resource files
   project_dir_names = get_all_project_dir_names()
   extra_files = [
@@ -81,7 +109,9 @@ task :copy_beopt_files do
         FileUtils.cp(beopt_file, buildstock_file)
       end
   end
-  
+end
+
+def clean_out(buildstock_resource_measures_dir)
   # Clean out resources/measures/ dir
   puts "Deleting #{buildstock_resource_measures_dir}..."
   while Dir.exist?(buildstock_resource_measures_dir)
@@ -89,7 +119,9 @@ task :copy_beopt_files do
     sleep 1
   end
   FileUtils.makedirs(buildstock_resource_measures_dir)
-  
+end
+
+def copy_measures(beopt_measures_dir, buildstock_resource_measures_dir)
   # Copy residential measures to resources/measures/
   Dir.foreach(beopt_measures_dir) do |beopt_measure|
     next if !beopt_measure.include? 'Residential'
@@ -104,10 +136,12 @@ task :copy_beopt_files do
       end
     end
   end
-  
+end
+
+def copy_other_measures(beopt_measures_dir)
   # Copy other measures to measure/ dir
-  other_measures = ["TimeseriesCSVExport"] # Still under development: "UtilityBillCalculationsSimple", "UtilityBillCalculationsDetailed"
-  buildstock_measures_dir = buildstock_resource_measures_dir = File.join(File.dirname(__FILE__), "measures")
+  other_measures = ["TimeseriesCSVExport", "ResidentialSimulationControls"] # Still under development: "UtilityBillCalculationsSimple", "UtilityBillCalculationsDetailed"
+  buildstock_measures_dir = File.join(File.dirname(__FILE__), "measures")
   other_measures.each do |other_measure|
     puts "Copying #{other_measure} measure..."
     FileUtils.cp_r(File.join(beopt_measures_dir, other_measure), buildstock_measures_dir)
@@ -124,10 +158,11 @@ task :copy_beopt_files do
       end
     end
   end
+end
 
+def clean_up(branch)
   puts "Cleaning up..."
   FileUtils.rm_rf(File.join(File.dirname(__FILE__), branch))
-
 end
 
 def remove_items_from_zip_file(dir, zip_file_name, items)
@@ -152,60 +187,131 @@ namespace :test do
     t.verbose = true
   end
   
-  desc 'regenerate SimulationOutputReport test osm files from osw files'
-  task :regenerate_osms do
-    require 'openstudio'
+  desc 'regenerate test osm files from osw files'
+  Rake::TestTask.new('regenerate_osms') do |t|
+    t.libs << 'test'
+    t.test_files = Dir['test/osw_files/tests/*.rb']
+    t.warning = false
+    t.verbose = true
+  end
+  
+end
 
+def regenerate_osms
+
+    require 'openstudio'
+  
+    start_time = Time.now
     num_tot = 0
     num_success = 0
     
     osw_path = File.expand_path("../test/osw_files/", __FILE__)
   
+    # Generate hash that maps osw's to measures
+    osw_map = {}
+    measures = Dir.entries(File.expand_path("../measures/", __FILE__)).select {|entry| File.directory? File.join(File.expand_path("../measures/", __FILE__), entry) and !(entry == '.' || entry == '..') }
+    measures.each do |m|
+        testrbs = Dir[File.expand_path("../measures/#{m}/tests/*.rb", __FILE__)]
+        if testrbs.size == 1
+            # Get osm's specified in the test rb
+            testrb = testrbs[0]
+            osms = get_osms_listed_in_test(testrb)
+            osms.each do |osm|
+                osw = File.basename(osm).gsub('.osm','.osw')
+                if not osw_map.keys.include?(osw)
+                    osw_map[osw] = []
+                end
+                osw_map[osw] << m
+            end
+        elsif testrbs.size > 1
+            fail "ERROR: Multiple .rb files found in #{m} tests dir."
+      end
+    end
+    
     osw_files = Dir.entries(osw_path).select {|entry| entry.end_with?(".osw")}
     if File.exists?(File.expand_path("../log", __FILE__))
         FileUtils.rm(File.expand_path("../log", __FILE__))
     end
+
+    # Print warnings about unused OSWs
+    osw_files.each do |osw|
+        next if not osw_map[osw].nil?
+        puts "Warning: Unused OSW '#{osw}'."
+    end
+
+    # Print more warnings
+    osw_map.each do |osw, _measures|
+        next if osw_files.include? osw
+        puts "Warning: OSW not found '#{osw}'."
+    end
+    
+    # Remove any extra osm's in the measures test dirs
+    measures.each do |m|
+        osms = Dir[File.expand_path("../measures/#{m}/tests/*.osm", __FILE__)]
+        osms.each do |osm|
+            osw = File.basename(osm).gsub('.osm','.osw')
+            if osw_map[osw].nil? or !osw_map[osw].include?(m)
+                puts "Extra file #{osw} found in #{m}/tests. Do you want to delete it? (y/n)"
+                input = STDIN.gets.strip.downcase
+                next if input != "y"
+                FileUtils.rm(osm)
+                puts "File deleted."
+            end
+        end
+    end
     
     cli_path = OpenStudio.getOpenStudioCLI
 
+    num_osws = 0
+    osw_files.each do |osw|
+        next if osw_map[osw].nil?
+        num_osws += 1
+    end
+
     osw_files.each do |osw|
     
-        next if File.basename(osw) == 'out.osw'
+        next if osw_map[osw].nil?
 
         # Generate osm from osw
         osw_filename = osw
         num_tot += 1
         
-        puts "[#{num_tot}/#{osw_files.size}] Regenerating osm from #{osw}..."
+        puts "[#{num_tot}/#{num_osws}] Regenerating osm from #{osw}..."
         osw = File.expand_path("../test/osw_files/#{osw}", __FILE__)
+        update_and_format_osw(osw)
         osm = File.expand_path("../test/osw_files/run/in.osm", __FILE__)
-        command = "\"#{cli_path}\" run -w #{osw} -m >> log"
+        command = "\"#{cli_path}\" --no-ssl run -w #{osw} -m >> log"
         for _retry in 1..3
             system(command)
             break if File.exists?(osm)
         end
         if not File.exists?(osm)
-            puts "  ERROR: Could not generate osm."
-            exit
+            fail "  ERROR: Could not generate osm."
         end
 
         # Add auto-generated message to top of file
+        # Update EPW file paths to be relative for the CirceCI machine
         file_text = File.readlines(osm)
         File.open(osm, "w") do |f|
             f.write("!- NOTE: Auto-generated from #{osw.gsub(File.dirname(__FILE__), "")}\n")
             file_text.each do |file_line|
+                if file_line.strip.start_with?("file:///")
+                    file_data = file_line.split('/')
+                    file_line = file_data[0] + "../tests/" + file_data[-1]
+                end
                 f.write(file_line)
             end
         end
 
         # Copy to appropriate measure test dirs
         osm_filename = osw_filename.gsub(".osw", ".osm")
-        measure_test_dir = File.expand_path("../measures/SimulationOutputReport/tests/", __FILE__)
-        if not Dir.exists?(measure_test_dir)
-            puts "  ERROR: Could not copy osm to #{measure_test_dir}."
-            exit
+        num_copied = 0
+        osw_map[osw_filename].each do |measure|
+            measure_test_dir = File.expand_path("../measures/#{measure}/tests/", __FILE__)
+            FileUtils.cp(osm, File.expand_path("#{measure_test_dir}/#{osm_filename}", __FILE__))
+            num_copied += 1
         end
-        FileUtils.cp(osm, File.expand_path("#{measure_test_dir}/#{osm_filename}", __FILE__))
+        puts "  Copied to #{num_copied} measure(s)."
         num_success += 1
 
         # Clean up
@@ -218,10 +324,40 @@ namespace :test do
         end
     end
     
-    puts "Completed. #{num_success} of #{num_tot} osm files were regenerated successfully."
-    
+    puts "Completed. #{num_success} of #{num_tot} osm files were regenerated successfully (#{Time.now - start_time} seconds)."
+
+end
+
+def get_osms_listed_in_test(testrb)
+    osms = []
+    if not File.exists?(testrb)
+      return osms
+    end
+    str = File.readlines(testrb).join("\n")
+    osms = str.scan(/\w+\.osm/)
+    return osms.uniq
+end
+
+def update_and_format_osw(osw)
+  # Insert new step(s) into test osw files, if they don't already exist: {{step1=>index, step2=>index}}
+  new_steps = {}
+  json = JSON.parse(File.read(osw), :symbolize_names=>true)
+  steps = json[:steps]
+  new_steps.each do |new_step, ix|
+    insert_new_step = true
+    steps.each do |step|
+      step.each do |k, v|
+        next if k != :measure_dir_name
+        next if v != new_step.values[0] # already have this step
+        insert_new_step = false
+      end
+    end
+    next unless insert_new_step
+    json[:steps].insert(ix, new_step)
   end
-  
+  File.open(osw, "w") do |f|
+    f.write(JSON.pretty_generate(json)) # format nicely even if not updating the osw with new steps
+  end
 end
 
 desc 'Perform integrity check on inputs for all projects'

@@ -132,7 +132,9 @@ class UnitConversions
       elsif from == 'btu/(lbm*r)' and to == 'j/(kg*k)' # by mass
         return x * 4187.0
       elsif from == 'btu/(ft^3*f)' and to == 'j/(m^3*k)' # by volume
-        return x * 67100.0 
+        return x * 67100.0
+      elsif from == 'btu/(lbm*r)' and to == 'wh/(kg*k)'
+        return x * 1.1632
       
       # Length
       elsif from == 'ft' and to == 'in'
@@ -241,6 +243,8 @@ class UnitConversions
         return x * 0.44704
       elsif from == 'm/s' and to == 'knots'
         return x * 1.9438445
+      elsif from == 'm/s' and to == 'mph'
+        return x * 2.2369363
       
       # Pressure & Density
       elsif from == 'atm' and to == 'btu/ft^3'
@@ -265,6 +269,8 @@ class UnitConversions
         return x * 0.185
       elsif from == 'psi' and to == 'kpa'
         return x * 6.89475729
+      elsif from == 'psi' and to == 'pa'
+        return x * 6.89475729 * 1000.0
       
       # Angles
       elsif from == 'deg' and to == 'rad'
