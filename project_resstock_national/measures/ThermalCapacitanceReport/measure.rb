@@ -4,6 +4,7 @@
 # http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
 
 require 'erb'
+require "#{File.dirname(__FILE__)}/resources/geometry"
 require "#{File.dirname(__FILE__)}/resources/unit_conversions"
 
 # start the measure
@@ -142,19 +143,25 @@ class ThermalCapacitanceReport < OpenStudio::Measure::ReportingMeasure
 
     end
 
-    report_output(runner, "living_space_air", [OpenStudio::OptionalDouble.new(UnitConversions.convert(Geometry.get_above_grade_finished_volume(model, true), "ft^3", "m^3") * 1.004 * 1.225)], desired_units, desired_units)
     model.getThermalZones.each do |thermal_zone|
-      if Geometry.is_garage(thermal_zone)
-        report_output(runner, "garage_space_air", [OpenStudio::OptionalDouble.new(UnitConversions.convert(Geometry.get_zone_volume(thermal_zone, false, runner), "ft^3", "m^3") * 1.004 * 1.225)], desired_units, desired_units)
+      if Geometry.is_living(thermal_zone)
+        name = "living_space_air"
+      elsif Geometry.is_garage(thermal_zone)
+        name = "garage_space_air"        
       elsif Geometry.is_unfinished_basement(thermal_zone)
-        report_output(runner, "unfinished_basement_space_air", [OpenStudio::OptionalDouble.new(UnitConversions.convert(Geometry.get_zone_volume(thermal_zone, false, runner), "ft^3", "m^3") * 1.004 * 1.225)], desired_units, desired_units)
+        name = "unfinished_basement_space_air"
       elsif Geometry.is_finished_basement(thermal_zone)
-        report_output(runner, "finished_basement_space_air", [OpenStudio::OptionalDouble.new(UnitConversions.convert(Geometry.get_zone_volume(thermal_zone, false, runner), "ft^3", "m^3") * 1.004 * 1.225)], desired_units, desired_units)
+        name = "finished_basement_space_air"
       elsif Geometry.is_crawl(thermal_zone)
-        report_output(runner, "crawl_space_air", [OpenStudio::OptionalDouble.new(UnitConversions.convert(Geometry.get_zone_volume(thermal_zone, false, runner), "ft^3", "m^3") * 1.004 * 1.225)], desired_units, desired_units)
+        name = "crawl_space_air"
       elsif Geometry.is_unfinished_attic(thermal_zone)
-        report_output(runner, "unfinished_attic_space_air", [OpenStudio::OptionalDouble.new(UnitConversions.convert(Geometry.get_zone_volume(thermal_zone, false, runner), "ft^3", "m^3") * 1.004 * 1.225)], desired_units, desired_units)
+        name = "unfinished_attic_space_air"
+      else
+        next
       end
+      vol = Geometry.get_zone_volume(thermal_zone, false, runner)
+      val = get_thermal_capacitance(nil, nil, 1.004 * 1.225, UnitConversions.convert(vol, "ft^3", "m^3"))
+      report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
     end
 
     sqlFile.close()
@@ -162,14 +169,18 @@ class ThermalCapacitanceReport < OpenStudio::Measure::ReportingMeasure
     return true
   end
 
-  def get_thermal_capacitance(construction, area)
-    val = 0
-    construction.layers.each do |layer|
-      next unless layer.to_StandardOpaqueMaterial.is_initialized
-      material = layer.to_StandardOpaqueMaterial.get
-      val += material.thickness * (material.specificHeat / 1000.0) * material.density
+  def get_thermal_capacitance(construction, area, val=nil, vol=nil)
+    if not val.nil? and not vol.nil?
+      return val * vol
+    else
+      val = 0
+      construction.layers.each do |layer|
+        next unless layer.to_StandardOpaqueMaterial.is_initialized
+        material = layer.to_StandardOpaqueMaterial.get
+        val += material.thickness * (material.specificHeat / 1000.0) * material.density
+      end
+      return val * area
     end
-    return val * area
   end
 
   def get_surface_area(model, construction)
