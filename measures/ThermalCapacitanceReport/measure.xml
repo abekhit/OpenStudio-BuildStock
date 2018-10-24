@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>thermal_capacitance_report</name>
   <uid>9b6f5641-b748-4a83-89c7-1926169336b8</uid>
-  <version_id>65a1e6f5-08a0-4ec7-a96c-70131849d7d4</version_id>
-  <version_modified>20181017T190420Z</version_modified>
+  <version_id>4d2e1fc5-b8e3-4ed4-825a-58b46989eaed</version_id>
+  <version_modified>20181024T170317Z</version_modified>
   <xml_checksum>6043863C</xml_checksum>
   <class_name>ThermalCapacitanceReport</class_name>
   <display_name>Thermal Capacitance Report</display_name>
@@ -294,19 +294,13 @@
       <filename>unit_conversions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>829C2833</checksum>
+      <checksum>7161039B</checksum>
     </file>
     <file>
       <filename>thermal_capacitance_report_test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>5D16DC98</checksum>
-    </file>
-    <file>
-      <filename>SFD_2story_S_UA_GRG_ASHP1_FuelTanklessWH.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>668B38CB</checksum>
+      <checksum>07C1582C</checksum>
     </file>
     <file>
       <version>
@@ -317,7 +311,31 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>3657701E</checksum>
+      <checksum>AA68C2BE</checksum>
+    </file>
+    <file>
+      <filename>example_single_family_detached.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>1B97396B</checksum>
+    </file>
+    <file>
+      <filename>constants.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>623A924C</checksum>
+    </file>
+    <file>
+      <filename>geometry.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>62B9E41C</checksum>
+    </file>
+    <file>
+      <filename>util.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>B8804B95</checksum>
     </file>
   </files>
 </measure>

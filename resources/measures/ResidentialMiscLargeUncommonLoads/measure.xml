@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>residential_misc_large_uncommon_loads</name>
   <uid>96f1e9ca-41b9-4fb8-a219-57850e351500</uid>
-  <version_id>dcfe5802-dc39-48f7-bcd7-5c0a7b2bb9f6</version_id>
-  <version_modified>20181015T212952Z</version_modified>
+  <version_id>83a24dbd-3968-4cc9-aed0-36bda78d462c</version_id>
+  <version_modified>20181016T214916Z</version_modified>
   <xml_checksum>126F1C43</xml_checksum>
   <class_name>ResidentialMiscLargeUncommonLoads</class_name>
   <display_name>Set Residential Large Uncommon Loads</display_name>
@@ -884,18 +884,6 @@
       <checksum>A0AF3447</checksum>
     </file>
     <file>
-      <filename>util.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>4516079E</checksum>
-    </file>
-    <file>
-      <filename>unit_conversions.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>81550F14</checksum>
-    </file>
-    <file>
       <filename>schedules.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -908,6 +896,12 @@
       <checksum>62B9E41C</checksum>
     </file>
     <file>
+      <filename>util.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>B8804B95</checksum>
+    </file>
+    <file>
       <filename>constants.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -917,25 +911,31 @@
       <filename>SFD_2000sqft_2story_FB_GRG_UA_3Beds_2Baths.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>8D47E594</checksum>
+      <checksum>BE5CE637</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_UB_UA_3Beds_2Baths_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>46E0AD2F</checksum>
+      <checksum>E4B10742</checksum>
     </file>
     <file>
       <filename>SFA_4units_1story_FB_UA_3Beds_2Baths_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>F8A1CCD2</checksum>
+      <checksum>068384FB</checksum>
     </file>
     <file>
       <filename>MF_8units_1story_SL_3Beds_2Baths_Denver.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>17F8930C</checksum>
+      <checksum>90F8D9E3</checksum>
+    </file>
+    <file>
+      <filename>unit_conversions.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>7161039B</checksum>
     </file>
   </files>
 </measure>
