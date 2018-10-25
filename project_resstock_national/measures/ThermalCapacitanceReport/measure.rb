@@ -30,6 +30,15 @@ class ThermalCapacitanceReport < OpenStudio::Measure::ReportingMeasure
   def arguments
     args = OpenStudio::Measure::OSArgumentVector.new
 
+    #make an argument for the building type
+    building_type = OpenStudio::StringVector.new
+    building_type << "Residential"
+    building_type << "Commercial"
+    arg = OpenStudio::Measure::OSArgument::makeChoiceArgument("building_type", building_type, true)
+    arg.setDisplayName("Building Type")
+    arg.setDefaultValue("Residential")
+    args << arg
+
     return args
   end
   
@@ -92,6 +101,8 @@ class ThermalCapacitanceReport < OpenStudio::Measure::ReportingMeasure
       return false
     end
 
+    building_type = runner.getStringArgumentValue("building_type",user_arguments)
+
     # get the last model and sql file
 
     model = runner.lastOpenStudioModel
@@ -111,34 +122,35 @@ class ThermalCapacitanceReport < OpenStudio::Measure::ReportingMeasure
 
     desired_units = "kj/k"
 
+    thermal_capacitances = {}
     model.getConstructions.each do |construction|
 
       # surfaces
       area, name = get_surface_area(model, construction)
       if area > 0
         val = get_thermal_capacitance(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        thermal_capacitances[name] = val
       end
 
       # foundations
       area, name = get_foundation_area(model, construction)
       if area > 0
         val = get_thermal_capacitance(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        thermal_capacitances[name] = val
       end
 
       # sub surfaces
       area, name = get_sub_surface_area(model, construction)
       if area > 0
         val = get_thermal_capacitance(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        thermal_capacitances[name] = val
       end
 
       # internal mass
       area, name = get_internal_mass_area(model, construction)
       if area > 0
         val = get_thermal_capacitance(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        thermal_capacitances[name] = val
       end
 
     end
@@ -161,7 +173,22 @@ class ThermalCapacitanceReport < OpenStudio::Measure::ReportingMeasure
       end
       vol = Geometry.get_zone_volume(thermal_zone, false, runner)
       val = get_thermal_capacitance(nil, nil, 1.004 * 1.225, UnitConversions.convert(vol, "ft^3", "m^3"))
-      report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+      thermal_capacitances[name] = val
+    end
+
+    if building_type == "Residential"
+      thermal_capacitances.each do |name, val|
+        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+      end
+    elsif building_type == "Commercial"
+      csv_path = File.expand_path("../thermal_capacitances.csv")
+      CSV.open(csv_path, "wb") do |csv|
+        thermal_capacitances.each do |name, val|
+          csv << [name, val]
+        end
+      end
+      csv_path = File.absolute_path(csv_path)
+      runner.registerFinalCondition("CSV file saved to <a href='file:///#{csv_path}'>thermal_capacitances.csv</a>.")
     end
 
     sqlFile.close()

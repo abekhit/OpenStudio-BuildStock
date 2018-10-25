@@ -27,7 +27,7 @@
         "cost": "$1.68/hr"
       },
       "user_id": "jrobert1",
-      "worker_node_number": 1,
+      "worker_node_number": 2,
       "aws_tags": [],
       "openstudio_server_version": {
         "name": "2.7.0",
@@ -59,7 +59,7 @@
         "ami": "ami-04782d48cde4cca60",
         "recommend": ""
       },
-      "cluster_status": "terminated",
+      "cluster_status": "running",
       "server": {
         "dns": null
       },
@@ -131,14 +131,14 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_national\\measures\\ResidentialSimulationControls",
+      "measure_dir": "C:/OpenStudio/OpenStudio-BuildStock/measures/ResidentialSimulationControls",
       "name": "residential_simulation_controls",
-      "directory": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_national\\measures\\ResidentialSimulationControls",
+      "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/ResidentialSimulationControls",
       "uid": "874f921e-8f3c-458a-a82f-01b7d51a547e",
       "uuid": "{874f921e-8f3c-458a-a82f-01b7d51a547e}",
-      "version_id": "4a92892f-6f6b-4a11-9770-356e00fd2003",
-      "version_uuid": "{4a92892f-6f6b-4a11-9770-356e00fd2003}",
-      "version_modified": "20181017T165216Z",
+      "version_id": "33435c42-485b-44bc-90d5-253dc91b820f",
+      "version_uuid": "{33435c42-485b-44bc-90d5-253dc91b820f}",
+      "version_modified": "20181025T203135Z",
       "xml_checksum": "2C38F48B",
       "display_name": "Set Residential Simulation Controls",
       "class_name": "ResidentialSimulationControls",
@@ -282,13 +282,13 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/17/2018",
+      "date": "10/25/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "EmptySeedModel.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.9407482630550998,
+      "instanceId": 0.01802387524510518,
       "skip": false,
       "$$hashKey": "object:21697",
       "outputMeasure": false
@@ -331,8 +331,8 @@
             "variableSetting": "Pivot",
             "distribution": "Integer Sequence",
             "discreteVariables": [],
-            "maximum": 58,
-            "minimum": 58,
+            "maximum": 500,
+            "minimum": 1,
             "mean": 0,
             "deltaX": 0,
             "stdDev": 0,
@@ -447,7 +447,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.48433716144815886,
+      "instanceId": 0.7004800404075291,
       "skip": false,
       "$$hashKey": "object:34492",
       "showWarningText": false,
@@ -3279,7 +3279,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.8139231842561048,
+      "instanceId": 0.7176297938817444,
       "skip": true,
       "$$hashKey": "object:31044",
       "showWarningText": false,
@@ -6111,7 +6111,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.052498539219075324,
+      "instanceId": 0.719836439702433,
       "skip": true,
       "showWarningText": false,
       "$$hashKey": "object:33811",
@@ -6996,7 +6996,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.4275781737785238,
+      "instanceId": 0.2711042506455281,
       "skip": false,
       "$$hashKey": "object:12818",
       "outputMeasure": true,
@@ -8588,7 +8588,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 5,
       "options": [],
-      "instanceId": 0.6106675546713918,
+      "instanceId": 0.16085541144201,
       "skip": false,
       "$$hashKey": "object:15382",
       "outputMeasure": true,
@@ -9344,9 +9344,9 @@
       "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/ThermalCapacitanceReport",
       "uid": "9b6f5641-b748-4a83-89c7-1926169336b8",
       "uuid": "{9b6f5641-b748-4a83-89c7-1926169336b8}",
-      "version_id": "f813eedf-17b7-447d-a5f1-1e0cf266c405",
-      "version_uuid": "{f813eedf-17b7-447d-a5f1-1e0cf266c405}",
-      "version_modified": "20181024T180227Z",
+      "version_id": "945cf3c6-01cd-453d-b659-c1a2736484af",
+      "version_uuid": "{945cf3c6-01cd-453d-b659-c1a2736484af}",
+      "version_modified": "20181025T204802Z",
       "xml_checksum": "6043863C",
       "display_name": "Thermal Capacitance Report",
       "class_name": "ThermalCapacitanceReport",
@@ -9704,7 +9704,44 @@
           "value": "ReportingMeasure"
         }
       ],
-      "arguments": [],
+      "arguments": [
+        {
+          "name": "building_type",
+          "display_name": "Building Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Residential",
+          "choice_values": [
+            "Residential",
+            "Commercial"
+          ],
+          "choice_display_names": [
+            "Residential",
+            "Commercial"
+          ],
+          "variable": false,
+          "$$hashKey": "object:13091",
+          "display_name_short": "building_type",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Residential",
+              "Commercial"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Residential",
+            "minimum": "Residential",
+            "mean": "Residential",
+            "deltaX": "Residential",
+            "stdDev": "Residential",
+            "default_value": "Residential"
+          }
+        }
+      ],
       "edit": "",
       "status": "",
       "bcl_update": false,
@@ -9712,13 +9749,13 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/24/2018",
+      "date": "10/25/2018",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "EmptySeedModel.osm",
       "workflow_index": 6,
       "options": [],
-      "instanceId": 0.6601011153391356,
+      "instanceId": 0.4537170764849936,
       "skip": false,
       "$$hashKey": "object:188083",
       "outputMeasure": true,
@@ -10264,9 +10301,9 @@
       "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/UAReport",
       "uid": "0fc173e6-a4d0-416c-80ad-f68e85845657",
       "uuid": "{0fc173e6-a4d0-416c-80ad-f68e85845657}",
-      "version_id": "a148b3ef-516b-422c-bd94-96ec3c4e9236",
-      "version_uuid": "{a148b3ef-516b-422c-bd94-96ec3c4e9236}",
-      "version_modified": "20181024T180227Z",
+      "version_id": "4f51a2c6-0b80-4bbe-aff3-cb06c795ed27",
+      "version_uuid": "{4f51a2c6-0b80-4bbe-aff3-cb06c795ed27}",
+      "version_modified": "20181025T204802Z",
       "xml_checksum": "6043863C",
       "display_name": "UA Report",
       "class_name": "UAReport",
@@ -10570,7 +10607,44 @@
           "value": "ReportingMeasure"
         }
       ],
-      "arguments": [],
+      "arguments": [
+        {
+          "name": "building_type",
+          "display_name": "Building Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Residential",
+          "choice_values": [
+            "Residential",
+            "Commercial"
+          ],
+          "choice_display_names": [
+            "Residential",
+            "Commercial"
+          ],
+          "variable": false,
+          "$$hashKey": "object:13165",
+          "display_name_short": "building_type",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Residential",
+              "Commercial"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Residential",
+            "minimum": "Residential",
+            "mean": "Residential",
+            "deltaX": "Residential",
+            "stdDev": "Residential",
+            "default_value": "Residential"
+          }
+        }
+      ],
       "edit": "",
       "status": "",
       "bcl_update": false,
@@ -10578,13 +10652,13 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/24/2018",
+      "date": "10/25/2018",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "EmptySeedModel.osm",
       "workflow_index": 7,
       "options": [],
-      "instanceId": 0.8474046974263485,
+      "instanceId": 0.3906444356589269,
       "skip": false,
       "$$hashKey": "object:13851",
       "outputMeasure": true,
@@ -11041,9 +11115,9 @@
       ]
     },
     {
-      "measure_dir": "C:/OpenStudio/OpenStudio-BuildStock/measures/TimeseriesCSVExport",
+      "measure_dir": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_national\\measures\\TimeseriesCSVExport",
       "name": "timeseries_csv_export",
-      "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/TimeseriesCSVExport",
+      "directory": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_national\\measures\\TimeseriesCSVExport",
       "uid": "2a3442c1-944d-4e91-9e11-11e0cf368c64",
       "uuid": "{2a3442c1-944d-4e91-9e11-11e0cf368c64}",
       "version_id": "8a0c3fdf-afca-4345-bef2-85e2f921d1eb",
@@ -11197,7 +11271,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 8,
       "options": [],
-      "instanceId": 0.7619119177204228,
+      "instanceId": 0.42678243295322527,
       "skip": false,
       "$$hashKey": "object:15284",
       "outputMeasure": false
@@ -11244,7 +11318,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 9,
       "options": [],
-      "instanceId": 0.5409301366217187,
+      "instanceId": 0.9297276590758858,
       "skip": false,
       "$$hashKey": "object:663249",
       "outputMeasure": false
