@@ -30,6 +30,15 @@ class UAReport < OpenStudio::Measure::ReportingMeasure
   def arguments
     args = OpenStudio::Measure::OSArgumentVector.new
 
+    #make an argument for the building type
+    building_type = OpenStudio::StringVector.new
+    building_type << "Residential"
+    building_type << "Commercial"
+    arg = OpenStudio::Measure::OSArgument::makeChoiceArgument("building_type", building_type, true)
+    arg.setDisplayName("Building Type")
+    arg.setDefaultValue("Residential")
+    args << arg
+
     return args
   end
   
@@ -86,6 +95,8 @@ class UAReport < OpenStudio::Measure::ReportingMeasure
       return false
     end
 
+    building_type = runner.getStringArgumentValue("building_type",user_arguments)
+
     # get the last model and sql file
 
     model = runner.lastOpenStudioModel
@@ -105,36 +116,52 @@ class UAReport < OpenStudio::Measure::ReportingMeasure
 
     desired_units = "w/k"
 
+    uas = {}
     model.getConstructions.each do |construction|
 
       # surfaces
       area, name = get_surface_area(model, construction)
       if area > 0
         val = get_ua(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        uas[name] = val
       end
 
       # foundations
       area, name = get_foundation_area(model, construction)
       if area > 0
         val = get_ua(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        uas[name] = val
       end
 
       # sub surfaces
       area, name = get_sub_surface_area(model, construction)
       if area > 0
         val = get_ua(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        uas[name] = val
       end
 
       # internal mass
       area, name = get_internal_mass_area(model, construction)
       if area > 0
         val = get_ua(construction, area)
-        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+        uas[name] = val
       end
 
+    end
+
+    if building_type == "Residential"
+      uas.each do |name, val|
+        report_output(runner, name, [OpenStudio::OptionalDouble.new(val)], desired_units, desired_units)
+      end
+    elsif building_type == "Commercial"
+      csv_path = File.expand_path("../uas.csv")
+      CSV.open(csv_path, "wb") do |csv|
+        uas.each do |name, val|
+          csv << [name, val]
+        end
+      end
+      csv_path = File.absolute_path(csv_path)
+      runner.registerFinalCondition("CSV file saved to <a href='file:///#{csv_path}'>uas.csv</a>.")
     end
 
     sqlFile.close()

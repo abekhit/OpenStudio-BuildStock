@@ -2,14 +2,33 @@
   <schema_version>3.0</schema_version>
   <name>ua_report</name>
   <uid>0fc173e6-a4d0-416c-80ad-f68e85845657</uid>
-  <version_id>a148b3ef-516b-422c-bd94-96ec3c4e9236</version_id>
-  <version_modified>20181024T180227Z</version_modified>
+  <version_id>4f51a2c6-0b80-4bbe-aff3-cb06c795ed27</version_id>
+  <version_modified>20181025T204802Z</version_modified>
   <xml_checksum>6043863C</xml_checksum>
   <class_name>UAReport</class_name>
   <display_name>UA Report</display_name>
   <description>TODO</description>
   <modeler_description>TODO</modeler_description>
-  <arguments/>
+  <arguments>
+    <argument>
+      <name>building_type</name>
+      <display_name>Building Type</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Residential</default_value>
+      <choices>
+        <choice>
+          <value>Residential</value>
+          <display_name>Residential</display_name>
+        </choice>
+        <choice>
+          <value>Commercial</value>
+          <display_name>Commercial</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
   <outputs>
     <output>
       <name>floor_fin_ins_unfin_attic</name>
@@ -281,7 +300,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>A190E673</checksum>
+      <checksum>B50FA9BB</checksum>
     </file>
   </files>
 </measure>

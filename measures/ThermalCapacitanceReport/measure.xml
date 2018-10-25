@@ -2,14 +2,33 @@
   <schema_version>3.0</schema_version>
   <name>thermal_capacitance_report</name>
   <uid>9b6f5641-b748-4a83-89c7-1926169336b8</uid>
-  <version_id>f813eedf-17b7-447d-a5f1-1e0cf266c405</version_id>
-  <version_modified>20181024T180227Z</version_modified>
+  <version_id>945cf3c6-01cd-453d-b659-c1a2736484af</version_id>
+  <version_modified>20181025T204802Z</version_modified>
   <xml_checksum>6043863C</xml_checksum>
   <class_name>ThermalCapacitanceReport</class_name>
   <display_name>Thermal Capacitance Report</display_name>
   <description>TODO</description>
   <modeler_description>TODO</modeler_description>
-  <arguments/>
+  <arguments>
+    <argument>
+      <name>building_type</name>
+      <display_name>Building Type</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Residential</default_value>
+      <choices>
+        <choice>
+          <value>Residential</value>
+          <display_name>Residential</display_name>
+        </choice>
+        <choice>
+          <value>Commercial</value>
+          <display_name>Commercial</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
   <outputs>
     <output>
       <name>floor_fin_ins_unfin_attic</name>
@@ -323,7 +342,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>E69F5017</checksum>
+      <checksum>D9C535D8</checksum>
     </file>
   </files>
 </measure>
