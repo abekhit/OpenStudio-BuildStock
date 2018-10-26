@@ -2,33 +2,14 @@
   <schema_version>3.0</schema_version>
   <name>ua_report</name>
   <uid>0fc173e6-a4d0-416c-80ad-f68e85845657</uid>
-  <version_id>155e2fc5-bf93-4c0f-9a3e-a3692eac8f25</version_id>
-  <version_modified>20181025T223945Z</version_modified>
+  <version_id>a52b0a36-2852-4272-b809-38e16969dea9</version_id>
+  <version_modified>20181024T170317Z</version_modified>
   <xml_checksum>6043863C</xml_checksum>
   <class_name>UAReport</class_name>
   <display_name>UA Report</display_name>
   <description>TODO</description>
   <modeler_description>TODO</modeler_description>
-  <arguments>
-    <argument>
-      <name>building_type</name>
-      <display_name>Building Type</display_name>
-      <type>Choice</type>
-      <required>true</required>
-      <model_dependent>false</model_dependent>
-      <default_value>Residential</default_value>
-      <choices>
-        <choice>
-          <value>Residential</value>
-          <display_name>Residential</display_name>
-        </choice>
-        <choice>
-          <value>Commercial</value>
-          <display_name>Commercial</display_name>
-        </choice>
-      </choices>
-    </argument>
-  </arguments>
+  <arguments/>
   <outputs>
     <output>
       <name>floor_fin_ins_unfin_attic</name>
@@ -274,6 +255,29 @@
       <checksum>7161039B</checksum>
     </file>
     <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.7.0</identifier>
+        <min_compatible>2.7.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>878F0249</checksum>
+    </file>
+    <file>
+      <filename>ua_report_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0EED643B</checksum>
+    </file>
+    <file>
+      <filename>example_single_family_detached.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>1B97396B</checksum>
+    </file>
+    <file>
       <filename>constants.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -290,17 +294,6 @@
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
       <checksum>B8804B95</checksum>
-    </file>
-    <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.7.0</identifier>
-        <min_compatible>2.7.0</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>A665D286</checksum>
     </file>
   </files>
 </measure>
