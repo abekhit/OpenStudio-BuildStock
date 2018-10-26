@@ -759,19 +759,714 @@
           "description": "Option 7 Description: Creates the DOE Reference Building Models as starting points for other analyses."
         }
       ],
-      "instanceId": 0.6572690190936563,
+      "instanceId": 0.9492216597059138,
       "numberOfOptions": 7,
       "$$hashKey": "object:39256"
     },
     {
-      "measure_dir": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_prototype_5B\\measures\\TimeseriesCSVExport",
+      "measure_dir": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_prototype_5B\\measures\\ConstructionPropertiesReport",
+      "name": "construction_properties_report",
+      "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/ConstructionPropertiesReport",
+      "uid": "0fc173e6-a4d0-416c-80ad-f68e85845657",
+      "uuid": "{0fc173e6-a4d0-416c-80ad-f68e85845657}",
+      "version_id": "fade8907-a836-4e23-a75d-fb43714db6bb",
+      "version_uuid": "{fade8907-a836-4e23-a75d-fb43714db6bb}",
+      "version_modified": "20181026T163239Z",
+      "xml_checksum": "6043863C",
+      "display_name": "Construction Properties Report",
+      "class_name": "ConstructionPropertiesReport",
+      "description": "Calculate thermal capacitance and UA for surfaces, furniture, and spaces.",
+      "modeler_description": "Calculate thermal capacitance and UA for surfaces, furniture, and spaces.",
+      "tags": "Envelope.Construction Sets",
+      "outputs": [
+        {
+          "name": "thermal_mass_floor_fin_ins_unfin_attic",
+          "display_name": "thermal_mass_floor_fin_ins_unfin_attic",
+          "short_name": "thermal_mass_floor_fin_ins_unfin_attic",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_fin_ins_unfin",
+          "display_name": "thermal_mass_floor_fin_ins_unfin",
+          "short_name": "thermal_mass_floor_fin_ins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_fin_unins_fin",
+          "display_name": "thermal_mass_floor_fin_unins_fin",
+          "short_name": "thermal_mass_floor_fin_unins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_unfin_unins_unfin",
+          "display_name": "thermal_mass_floor_unfin_unins_unfin",
+          "short_name": "thermal_mass_floor_unfin_unins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_fnd_grnd_fin_b",
+          "display_name": "thermal_mass_floor_fnd_grnd_fin_b",
+          "short_name": "thermal_mass_floor_fnd_grnd_fin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_fnd_grnd_unfin_b",
+          "display_name": "thermal_mass_floor_fnd_grnd_unfin_b",
+          "short_name": "thermal_mass_floor_fnd_grnd_unfin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_fnd_grnd_fin_slab",
+          "display_name": "thermal_mass_floor_fnd_grnd_fin_slab",
+          "short_name": "thermal_mass_floor_fnd_grnd_fin_slab",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_fnd_grnd_unfin_slab",
+          "display_name": "thermal_mass_floor_fnd_grnd_unfin_slab",
+          "short_name": "thermal_mass_floor_fnd_grnd_unfin_slab",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_unfin_b_ins_fin",
+          "display_name": "thermal_mass_floor_unfin_b_ins_fin",
+          "short_name": "thermal_mass_floor_unfin_b_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_cs_ins_fin",
+          "display_name": "thermal_mass_floor_cs_ins_fin",
+          "short_name": "thermal_mass_floor_cs_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_pb_ins_fin",
+          "display_name": "thermal_mass_floor_pb_ins_fin",
+          "short_name": "thermal_mass_floor_pb_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_floor_fnd_grnd_cs",
+          "display_name": "thermal_mass_floor_fnd_grnd_cs",
+          "short_name": "thermal_mass_floor_fnd_grnd_cs",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_roof_unfin_unins_ext",
+          "display_name": "thermal_mass_roof_unfin_unins_ext",
+          "short_name": "thermal_mass_roof_unfin_unins_ext",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_roof_unfin_ins_ext",
+          "display_name": "thermal_mass_roof_unfin_ins_ext",
+          "short_name": "thermal_mass_roof_unfin_ins_ext",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_roof_fin_ins_ext",
+          "display_name": "thermal_mass_roof_fin_ins_ext",
+          "short_name": "thermal_mass_roof_fin_ins_ext",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_ext_ins_fin",
+          "display_name": "thermal_mass_wall_ext_ins_fin",
+          "short_name": "thermal_mass_wall_ext_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_ext_ins_unfin",
+          "display_name": "thermal_mass_wall_ext_ins_unfin",
+          "short_name": "thermal_mass_wall_ext_ins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_ext_unins_unfin",
+          "display_name": "thermal_mass_wall_ext_unins_unfin",
+          "short_name": "thermal_mass_wall_ext_unins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_fnd_grnd_fin_b",
+          "display_name": "thermal_mass_wall_fnd_grnd_fin_b",
+          "short_name": "thermal_mass_wall_fnd_grnd_fin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_fnd_grnd_unfin_b",
+          "display_name": "thermal_mass_wall_fnd_grnd_unfin_b",
+          "short_name": "thermal_mass_wall_fnd_grnd_unfin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_fnd_grnd_cs",
+          "display_name": "thermal_mass_wall_fnd_grnd_cs",
+          "short_name": "thermal_mass_wall_fnd_grnd_cs",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_int_fin_ins_unfin",
+          "display_name": "thermal_mass_wall_int_fin_ins_unfin",
+          "short_name": "thermal_mass_wall_int_fin_ins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_int_fin_unins_fin",
+          "display_name": "thermal_mass_wall_int_fin_unins_fin",
+          "short_name": "thermal_mass_wall_int_fin_unins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_wall_int_unfin_unins_unfin",
+          "display_name": "thermal_mass_wall_int_unfin_unins_unfin",
+          "short_name": "thermal_mass_wall_int_unfin_unins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_living_space_footing_construction",
+          "display_name": "thermal_mass_living_space_footing_construction",
+          "short_name": "thermal_mass_living_space_footing_construction",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_garage_space_footing_construction",
+          "display_name": "thermal_mass_garage_space_footing_construction",
+          "short_name": "thermal_mass_garage_space_footing_construction",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_door",
+          "display_name": "thermal_mass_door",
+          "short_name": "thermal_mass_door",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_residential_furniture_construction_living_space",
+          "display_name": "thermal_mass_residential_furniture_construction_living_space",
+          "short_name": "thermal_mass_residential_furniture_construction_living_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_residential_furniture_construction_living_space_story_2",
+          "display_name": "thermal_mass_residential_furniture_construction_living_space_story_2",
+          "short_name": "thermal_mass_residential_furniture_construction_living_space_story_2",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_residential_furniture_construction_unfinished_basement_space",
+          "display_name": "thermal_mass_residential_furniture_construction_unfinished_basement_space",
+          "short_name": "thermal_mass_residential_furniture_construction_unfinished_basement_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_residential_furniture_construction_finished_basement_space",
+          "display_name": "thermal_mass_residential_furniture_construction_finished_basement_space",
+          "short_name": "thermal_mass_residential_furniture_construction_finished_basement_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_residential_furniture_construction_garage_space",
+          "display_name": "thermal_mass_residential_furniture_construction_garage_space",
+          "short_name": "thermal_mass_residential_furniture_construction_garage_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_living_zone",
+          "display_name": "thermal_mass_living_zone",
+          "short_name": "thermal_mass_living_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_garage_zone",
+          "display_name": "thermal_mass_garage_zone",
+          "short_name": "thermal_mass_garage_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_unfinished_basement_zone",
+          "display_name": "thermal_mass_unfinished_basement_zone",
+          "short_name": "thermal_mass_unfinished_basement_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_finished_basement_zone",
+          "display_name": "thermal_mass_finished_basement_zone",
+          "short_name": "thermal_mass_finished_basement_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_crawl_zone",
+          "display_name": "thermal_mass_crawl_zone",
+          "short_name": "thermal_mass_crawl_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "thermal_mass_unfinished_attic_zone",
+          "display_name": "thermal_mass_unfinished_attic_zone",
+          "short_name": "thermal_mass_unfinished_attic_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fin_ins_unfin_attic",
+          "display_name": "ua_floor_fin_ins_unfin_attic",
+          "short_name": "ua_floor_fin_ins_unfin_attic",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fin_ins_unfin",
+          "display_name": "ua_floor_fin_ins_unfin",
+          "short_name": "ua_floor_fin_ins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fin_unins_fin",
+          "display_name": "ua_floor_fin_unins_fin",
+          "short_name": "ua_floor_fin_unins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_unfin_unins_unfin",
+          "display_name": "ua_floor_unfin_unins_unfin",
+          "short_name": "ua_floor_unfin_unins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fnd_grnd_fin_b",
+          "display_name": "ua_floor_fnd_grnd_fin_b",
+          "short_name": "ua_floor_fnd_grnd_fin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fnd_grnd_unfin_b",
+          "display_name": "ua_floor_fnd_grnd_unfin_b",
+          "short_name": "ua_floor_fnd_grnd_unfin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fnd_grnd_fin_slab",
+          "display_name": "ua_floor_fnd_grnd_fin_slab",
+          "short_name": "ua_floor_fnd_grnd_fin_slab",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fnd_grnd_unfin_slab",
+          "display_name": "ua_floor_fnd_grnd_unfin_slab",
+          "short_name": "ua_floor_fnd_grnd_unfin_slab",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_unfin_b_ins_fin",
+          "display_name": "ua_floor_unfin_b_ins_fin",
+          "short_name": "ua_floor_unfin_b_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_cs_ins_fin",
+          "display_name": "ua_floor_cs_ins_fin",
+          "short_name": "ua_floor_cs_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_pb_ins_fin",
+          "display_name": "ua_floor_pb_ins_fin",
+          "short_name": "ua_floor_pb_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_floor_fnd_grnd_cs",
+          "display_name": "ua_floor_fnd_grnd_cs",
+          "short_name": "ua_floor_fnd_grnd_cs",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_roof_unfin_unins_ext",
+          "display_name": "ua_roof_unfin_unins_ext",
+          "short_name": "ua_roof_unfin_unins_ext",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_roof_unfin_ins_ext",
+          "display_name": "ua_roof_unfin_ins_ext",
+          "short_name": "ua_roof_unfin_ins_ext",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_roof_fin_ins_ext",
+          "display_name": "ua_roof_fin_ins_ext",
+          "short_name": "ua_roof_fin_ins_ext",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_ext_ins_fin",
+          "display_name": "ua_wall_ext_ins_fin",
+          "short_name": "ua_wall_ext_ins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_ext_ins_unfin",
+          "display_name": "ua_wall_ext_ins_unfin",
+          "short_name": "ua_wall_ext_ins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_ext_unins_unfin",
+          "display_name": "ua_wall_ext_unins_unfin",
+          "short_name": "ua_wall_ext_unins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_fnd_grnd_fin_b",
+          "display_name": "ua_wall_fnd_grnd_fin_b",
+          "short_name": "ua_wall_fnd_grnd_fin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_fnd_grnd_unfin_b",
+          "display_name": "ua_wall_fnd_grnd_unfin_b",
+          "short_name": "ua_wall_fnd_grnd_unfin_b",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_fnd_grnd_cs",
+          "display_name": "ua_wall_fnd_grnd_cs",
+          "short_name": "ua_wall_fnd_grnd_cs",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_int_fin_ins_unfin",
+          "display_name": "ua_wall_int_fin_ins_unfin",
+          "short_name": "ua_wall_int_fin_ins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_int_fin_unins_fin",
+          "display_name": "ua_wall_int_fin_unins_fin",
+          "short_name": "ua_wall_int_fin_unins_fin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_wall_int_unfin_unins_unfin",
+          "display_name": "ua_wall_int_unfin_unins_unfin",
+          "short_name": "ua_wall_int_unfin_unins_unfin",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_living_space_footing_construction",
+          "display_name": "ua_living_space_footing_construction",
+          "short_name": "ua_living_space_footing_construction",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_garage_space_footing_construction",
+          "display_name": "ua_garage_space_footing_construction",
+          "short_name": "ua_garage_space_footing_construction",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_door",
+          "display_name": "ua_door",
+          "short_name": "ua_door",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_residential_furniture_construction_living_space",
+          "display_name": "ua_residential_furniture_construction_living_space",
+          "short_name": "ua_residential_furniture_construction_living_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_residential_furniture_construction_living_space_story_2",
+          "display_name": "ua_residential_furniture_construction_living_space_story_2",
+          "short_name": "ua_residential_furniture_construction_living_space_story_2",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_residential_furniture_construction_unfinished_basement_space",
+          "display_name": "ua_residential_furniture_construction_unfinished_basement_space",
+          "short_name": "ua_residential_furniture_construction_unfinished_basement_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_residential_furniture_construction_finished_basement_space",
+          "display_name": "ua_residential_furniture_construction_finished_basement_space",
+          "short_name": "ua_residential_furniture_construction_finished_basement_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_residential_furniture_construction_garage_space",
+          "display_name": "ua_residential_furniture_construction_garage_space",
+          "short_name": "ua_residential_furniture_construction_garage_space",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_living_zone",
+          "display_name": "ua_living_zone",
+          "short_name": "ua_living_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_garage_zone",
+          "display_name": "ua_garage_zone",
+          "short_name": "ua_garage_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_unfinished_basement_zone",
+          "display_name": "ua_unfinished_basement_zone",
+          "short_name": "ua_unfinished_basement_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_finished_basement_zone",
+          "display_name": "ua_finished_basement_zone",
+          "short_name": "ua_finished_basement_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_crawl_zone",
+          "display_name": "ua_crawl_zone",
+          "short_name": "ua_crawl_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "ua_unfinished_attic_zone",
+          "display_name": "ua_unfinished_attic_zone",
+          "short_name": "ua_unfinished_attic_zone",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-00TY",
+          "variable": false,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-00U0",
+          "variable": false,
+          "option_1": "Option 1 Name"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-00U2",
+          "variable": false,
+          "option_1": "Option 1 Description: Calculate thermal capacitance and UA for surfaces, furniture, and spaces."
+        },
+        {
+          "name": "register_values",
+          "display_name": "Register Values",
+          "description": "Whether to register values to results csv or export to separate csv.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00U4",
+          "variable": false,
+          "option_1": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "10/26/2018",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "EmptySeedModel.osm",
+      "workflow_index": 1,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "register_values",
+              "value": false
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Calculate thermal capacitance and UA for surfaces, furniture, and spaces."
+        }
+      ],
+      "instanceId": 0.15761453816545878,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:2994"
+    },
+    {
+      "measure_dir": "C:/OpenStudio/OpenStudio-BuildStock/measures/TimeseriesCSVExport",
       "name": "timeseries_csv_export",
-      "directory": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_prototype_5B\\measures\\TimeseriesCSVExport",
+      "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/TimeseriesCSVExport",
       "uid": "2a3442c1-944d-4e91-9e11-11e0cf368c64",
       "uuid": "{2a3442c1-944d-4e91-9e11-11e0cf368c64}",
-      "version_id": "2c1bf3b1-9717-4a1c-a2fc-f320c3cc8ed8",
-      "version_uuid": "{2c1bf3b1-9717-4a1c-a2fc-f320c3cc8ed8}",
-      "version_modified": "20181025T221908Z",
+      "version_id": "e51c9ad8-12c3-49c0-a5a4-dfa98631a7e6",
+      "version_uuid": "{e51c9ad8-12c3-49c0-a5a4-dfa98631a7e6}",
+      "version_modified": "20181026T163239Z",
       "xml_checksum": "15BF4E57",
       "display_name": "Timeseries CSV Export",
       "class_name": "TimeseriesCSVExport",
@@ -928,1861 +1623,17 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/25/2018",
-      "author": "",
-      "type": "ReportingMeasure",
-      "seed": "EmptySeedModel.osm",
-      "workflow_index": 1,
-      "options": [],
-      "instanceId": 0.794005587894447,
-      "skip": false,
-      "$$hashKey": "object:15284",
-      "outputMeasure": false,
-      "numberOfOptions": 0
-    },
-    {
-      "measure_dir": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_prototype_5B\\measures\\ThermalCapacitanceReport",
-      "name": "thermal_capacitance_report",
-      "directory": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_prototype_5B\\measures\\ThermalCapacitanceReport",
-      "uid": "9b6f5641-b748-4a83-89c7-1926169336b8",
-      "uuid": "{9b6f5641-b748-4a83-89c7-1926169336b8}",
-      "version_id": "0cb3d14c-0982-4e86-88e2-f124ff98b20c",
-      "version_uuid": "{0cb3d14c-0982-4e86-88e2-f124ff98b20c}",
-      "version_modified": "20181025T223945Z",
-      "xml_checksum": "6043863C",
-      "display_name": "Thermal Capacitance Report",
-      "class_name": "ThermalCapacitanceReport",
-      "description": "TODO",
-      "modeler_description": "TODO",
-      "tags": "Envelope.Construction Sets",
-      "outputs": [
-        {
-          "name": "floor_fin_ins_unfin_attic",
-          "display_name": "floor_fin_ins_unfin_attic",
-          "short_name": "floor_fin_ins_unfin_attic",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fin_ins_unfin",
-          "display_name": "floor_fin_ins_unfin",
-          "short_name": "floor_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fin_unins_fin",
-          "display_name": "floor_fin_unins_fin",
-          "short_name": "floor_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_unfin_unins_unfin",
-          "display_name": "floor_unfin_unins_unfin",
-          "short_name": "floor_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_fin_b",
-          "display_name": "floor_fnd_grnd_fin_b",
-          "short_name": "floor_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_b",
-          "display_name": "floor_fnd_grnd_unfin_b",
-          "short_name": "floor_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_fin_slab",
-          "display_name": "floor_fnd_grnd_fin_slab",
-          "short_name": "floor_fnd_grnd_fin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_slab",
-          "display_name": "floor_fnd_grnd_unfin_slab",
-          "short_name": "floor_fnd_grnd_unfin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_unfin_b_ins_fin",
-          "display_name": "floor_unfin_b_ins_fin",
-          "short_name": "floor_unfin_b_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_cs_ins_fin",
-          "display_name": "floor_cs_ins_fin",
-          "short_name": "floor_cs_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_pb_ins_fin",
-          "display_name": "floor_pb_ins_fin",
-          "short_name": "floor_pb_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_cs",
-          "display_name": "floor_fnd_grnd_cs",
-          "short_name": "floor_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "roof_unfin_unins_ext",
-          "display_name": "roof_unfin_unins_ext",
-          "short_name": "roof_unfin_unins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "roof_unfin_ins_ext",
-          "display_name": "roof_unfin_ins_ext",
-          "short_name": "roof_unfin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "roof_fin_ins_ext",
-          "display_name": "roof_fin_ins_ext",
-          "short_name": "roof_fin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_ext_ins_fin",
-          "display_name": "wall_ext_ins_fin",
-          "short_name": "wall_ext_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_ext_ins_unfin",
-          "display_name": "wall_ext_ins_unfin",
-          "short_name": "wall_ext_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_ext_unins_unfin",
-          "display_name": "wall_ext_unins_unfin",
-          "short_name": "wall_ext_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_fnd_grnd_fin_b",
-          "display_name": "wall_fnd_grnd_fin_b",
-          "short_name": "wall_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_fnd_grnd_unfin_b",
-          "display_name": "wall_fnd_grnd_unfin_b",
-          "short_name": "wall_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_fnd_grnd_cs",
-          "display_name": "wall_fnd_grnd_cs",
-          "short_name": "wall_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_int_fin_ins_unfin",
-          "display_name": "wall_int_fin_ins_unfin",
-          "short_name": "wall_int_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_int_fin_unins_fin",
-          "display_name": "wall_int_fin_unins_fin",
-          "short_name": "wall_int_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_int_unfin_unins_unfin",
-          "display_name": "wall_int_unfin_unins_unfin",
-          "short_name": "wall_int_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "living_space_footing_construction",
-          "display_name": "living_space_footing_construction",
-          "short_name": "living_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "garage_space_footing_construction",
-          "display_name": "garage_space_footing_construction",
-          "short_name": "garage_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "door",
-          "display_name": "door",
-          "short_name": "door",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_living_space",
-          "display_name": "residential_furniture_construction_living_space",
-          "short_name": "residential_furniture_construction_living_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_living_space_story_2",
-          "display_name": "residential_furniture_construction_living_space_story_2",
-          "short_name": "residential_furniture_construction_living_space_story_2",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_unfinished_basement_space",
-          "display_name": "residential_furniture_construction_unfinished_basement_space",
-          "short_name": "residential_furniture_construction_unfinished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_finished_basement_space",
-          "display_name": "residential_furniture_construction_finished_basement_space",
-          "short_name": "residential_furniture_construction_finished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_garage_space",
-          "display_name": "residential_furniture_construction_garage_space",
-          "short_name": "residential_furniture_construction_garage_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "living_space_air",
-          "display_name": "living_space_air",
-          "short_name": "living_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "garage_space_air",
-          "display_name": "garage_space_air",
-          "short_name": "garage_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "unfinished_basement_space_air",
-          "display_name": "unfinished_basement_space_air",
-          "short_name": "unfinished_basement_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "finished_basement_space_air",
-          "display_name": "finished_basement_space_air",
-          "short_name": "finished_basement_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "crawl_space_air",
-          "display_name": "crawl_space_air",
-          "short_name": "crawl_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "unfinished_attic_space_air",
-          "display_name": "unfinished_attic_space_air",
-          "short_name": "unfinished_attic_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        }
-      ],
-      "attributes": [
-        {
-          "name": "Measure Type",
-          "display_name": "Measure Type",
-          "value": "ReportingMeasure"
-        }
-      ],
-      "arguments": [
-        {
-          "specialRowId": "optionDelete",
-          "$$hashKey": "uiGrid-0097",
-          "variable": false,
-          "option_1": "option_1"
-        },
-        {
-          "specialRowId": "optionName",
-          "type": "String",
-          "$$hashKey": "uiGrid-0099",
-          "variable": false,
-          "option_1": "Option 1 Name"
-        },
-        {
-          "specialRowId": "optionDescription",
-          "type": "String",
-          "$$hashKey": "uiGrid-009B",
-          "variable": false,
-          "option_1": "Option 1 Description: TODO"
-        },
-        {
-          "name": "building_type",
-          "display_name": "Building Type",
-          "description": "",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "Residential",
-          "choice_values": [
-            "Residential",
-            "Commercial"
-          ],
-          "choice_display_names": [
-            "Residential",
-            "Commercial"
-          ],
-          "variable": false,
-          "$$hashKey": "object:13091",
-          "display_name_short": "building_type",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [
-              "Residential",
-              "Commercial"
-            ],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "Residential",
-            "minimum": "Residential",
-            "mean": "Residential",
-            "deltaX": "Residential",
-            "stdDev": "Residential",
-            "default_value": "Residential"
-          },
-          "option_1": "Commercial"
-        }
-      ],
-      "edit": "",
-      "status": "",
-      "bcl_update": false,
-      "location": "my",
-      "add": "",
-      "open": false,
-      "addedToProject": true,
-      "date": "10/25/2018",
+      "date": "10/26/2018",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "EmptySeedModel.osm",
       "workflow_index": 2,
-      "options": [
-        {
-          "id": "option_1",
-          "arguments": [
-            {
-              "name": "building_type",
-              "value": "Commercial"
-            }
-          ],
-          "name": "Option 1 Name",
-          "description": "Option 1 Description: TODO"
-        }
-      ],
-      "instanceId": 0.10617469574033156,
+      "options": [],
+      "instanceId": 0.4330714007533032,
       "skip": false,
-      "$$hashKey": "object:188083",
-      "outputMeasure": true,
-      "userDefinedOutputs": [],
-      "analysisOutputs": [
-        {
-          "name": "floor_fin_ins_unfin_attic",
-          "display_name": "floor_fin_ins_unfin_attic",
-          "short_name": "floor_fin_ins_unfin_attic",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191428",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_fin_ins_unfin",
-          "display_name": "floor_fin_ins_unfin",
-          "short_name": "floor_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191429",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_fin_unins_fin",
-          "display_name": "floor_fin_unins_fin",
-          "short_name": "floor_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191430",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_unfin_unins_unfin",
-          "display_name": "floor_unfin_unins_unfin",
-          "short_name": "floor_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191431",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_fnd_grnd_fin_b",
-          "display_name": "floor_fnd_grnd_fin_b",
-          "short_name": "floor_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191432",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_b",
-          "display_name": "floor_fnd_grnd_unfin_b",
-          "short_name": "floor_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191433",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_fnd_grnd_fin_slab",
-          "display_name": "floor_fnd_grnd_fin_slab",
-          "short_name": "floor_fnd_grnd_fin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191434",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_slab",
-          "display_name": "floor_fnd_grnd_unfin_slab",
-          "short_name": "floor_fnd_grnd_unfin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191435",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_unfin_b_ins_fin",
-          "display_name": "floor_unfin_b_ins_fin",
-          "short_name": "floor_unfin_b_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191436",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_cs_ins_fin",
-          "display_name": "floor_cs_ins_fin",
-          "short_name": "floor_cs_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191437",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_pb_ins_fin",
-          "display_name": "floor_pb_ins_fin",
-          "short_name": "floor_pb_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191438",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "floor_fnd_grnd_cs",
-          "display_name": "floor_fnd_grnd_cs",
-          "short_name": "floor_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191439",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "roof_unfin_unins_ext",
-          "display_name": "roof_unfin_unins_ext",
-          "short_name": "roof_unfin_unins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191440",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "roof_unfin_ins_ext",
-          "display_name": "roof_unfin_ins_ext",
-          "short_name": "roof_unfin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191441",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "roof_fin_ins_ext",
-          "display_name": "roof_fin_ins_ext",
-          "short_name": "roof_fin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191442",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_ext_ins_fin",
-          "display_name": "wall_ext_ins_fin",
-          "short_name": "wall_ext_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191443",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_ext_ins_unfin",
-          "display_name": "wall_ext_ins_unfin",
-          "short_name": "wall_ext_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191444",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_ext_unins_unfin",
-          "display_name": "wall_ext_unins_unfin",
-          "short_name": "wall_ext_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191445",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_fnd_grnd_fin_b",
-          "display_name": "wall_fnd_grnd_fin_b",
-          "short_name": "wall_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191446",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_fnd_grnd_unfin_b",
-          "display_name": "wall_fnd_grnd_unfin_b",
-          "short_name": "wall_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191447",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_fnd_grnd_cs",
-          "display_name": "wall_fnd_grnd_cs",
-          "short_name": "wall_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191448",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_int_fin_ins_unfin",
-          "display_name": "wall_int_fin_ins_unfin",
-          "short_name": "wall_int_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191449",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_int_fin_unins_fin",
-          "display_name": "wall_int_fin_unins_fin",
-          "short_name": "wall_int_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191450",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "wall_int_unfin_unins_unfin",
-          "display_name": "wall_int_unfin_unins_unfin",
-          "short_name": "wall_int_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191451",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "living_space_footing_construction",
-          "display_name": "living_space_footing_construction",
-          "short_name": "living_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191453",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "garage_space_footing_construction",
-          "display_name": "garage_space_footing_construction",
-          "short_name": "garage_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191454",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "door",
-          "display_name": "door",
-          "short_name": "door",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191456",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "residential_furniture_construction_living_space",
-          "display_name": "residential_furniture_construction_living_space",
-          "short_name": "residential_furniture_construction_living_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191457",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "residential_furniture_construction_living_space_story_2",
-          "display_name": "residential_furniture_construction_living_space_story_2",
-          "short_name": "residential_furniture_construction_living_space_story_2",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191458",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "residential_furniture_construction_unfinished_basement_space",
-          "display_name": "residential_furniture_construction_unfinished_basement_space",
-          "short_name": "residential_furniture_construction_unfinished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191459",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "residential_furniture_construction_finished_basement_space",
-          "display_name": "residential_furniture_construction_finished_basement_space",
-          "short_name": "residential_furniture_construction_finished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191460",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "residential_furniture_construction_garage_space",
-          "display_name": "residential_furniture_construction_garage_space",
-          "short_name": "residential_furniture_construction_garage_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191461",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "living_space_air",
-          "display_name": "living_space_air",
-          "short_name": "living_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191462",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "garage_space_air",
-          "display_name": "garage_space_air",
-          "short_name": "garage_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191463",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "unfinished_basement_space_air",
-          "display_name": "unfinished_basement_space_air",
-          "short_name": "unfinished_basement_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191464",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "finished_basement_space_air",
-          "display_name": "finished_basement_space_air",
-          "short_name": "finished_basement_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191465",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "crawl_space_air",
-          "display_name": "crawl_space_air",
-          "short_name": "crawl_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191466",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        },
-        {
-          "name": "unfinished_attic_space_air",
-          "display_name": "unfinished_attic_space_air",
-          "short_name": "unfinished_attic_space_air",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:191467",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "thermal_capacitance_report",
-          "measure_class_name": "ThermalCapacitanceReport",
-          "measure_uid": "9b6f5641-b748-4a83-89c7-1926169336b8"
-        }
-      ],
-      "numberOfOptions": 1
-    },
-    {
-      "measure_dir": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_prototype_5B\\measures\\UAReport",
-      "name": "ua_report",
-      "directory": "C:\\OpenStudio\\OpenStudio-BuildStock\\project_resstock_prototype_5B\\measures\\UAReport",
-      "uid": "0fc173e6-a4d0-416c-80ad-f68e85845657",
-      "uuid": "{0fc173e6-a4d0-416c-80ad-f68e85845657}",
-      "version_id": "155e2fc5-bf93-4c0f-9a3e-a3692eac8f25",
-      "version_uuid": "{155e2fc5-bf93-4c0f-9a3e-a3692eac8f25}",
-      "version_modified": "20181025T223945Z",
-      "xml_checksum": "6043863C",
-      "display_name": "UA Report",
-      "class_name": "UAReport",
-      "description": "TODO",
-      "modeler_description": "TODO",
-      "tags": "Envelope.Construction Sets",
-      "outputs": [
-        {
-          "name": "floor_fin_ins_unfin_attic",
-          "display_name": "floor_fin_ins_unfin_attic",
-          "short_name": "floor_fin_ins_unfin_attic",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fin_ins_unfin",
-          "display_name": "floor_fin_ins_unfin",
-          "short_name": "floor_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fin_unins_fin",
-          "display_name": "floor_fin_unins_fin",
-          "short_name": "floor_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_unfin_unins_unfin",
-          "display_name": "floor_unfin_unins_unfin",
-          "short_name": "floor_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_fin_b",
-          "display_name": "floor_fnd_grnd_fin_b",
-          "short_name": "floor_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_b",
-          "display_name": "floor_fnd_grnd_unfin_b",
-          "short_name": "floor_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_fin_slab",
-          "display_name": "floor_fnd_grnd_fin_slab",
-          "short_name": "floor_fnd_grnd_fin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_slab",
-          "display_name": "floor_fnd_grnd_unfin_slab",
-          "short_name": "floor_fnd_grnd_unfin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_unfin_b_ins_fin",
-          "display_name": "floor_unfin_b_ins_fin",
-          "short_name": "floor_unfin_b_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_cs_ins_fin",
-          "display_name": "floor_cs_ins_fin",
-          "short_name": "floor_cs_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_pb_ins_fin",
-          "display_name": "floor_pb_ins_fin",
-          "short_name": "floor_pb_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "floor_fnd_grnd_cs",
-          "display_name": "floor_fnd_grnd_cs",
-          "short_name": "floor_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "roof_unfin_unins_ext",
-          "display_name": "roof_unfin_unins_ext",
-          "short_name": "roof_unfin_unins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "roof_unfin_ins_ext",
-          "display_name": "roof_unfin_ins_ext",
-          "short_name": "roof_unfin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "roof_fin_ins_ext",
-          "display_name": "roof_fin_ins_ext",
-          "short_name": "roof_fin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_ext_ins_fin",
-          "display_name": "wall_ext_ins_fin",
-          "short_name": "wall_ext_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_ext_ins_unfin",
-          "display_name": "wall_ext_ins_unfin",
-          "short_name": "wall_ext_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_ext_unins_unfin",
-          "display_name": "wall_ext_unins_unfin",
-          "short_name": "wall_ext_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_fnd_grnd_fin_b",
-          "display_name": "wall_fnd_grnd_fin_b",
-          "short_name": "wall_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_fnd_grnd_unfin_b",
-          "display_name": "wall_fnd_grnd_unfin_b",
-          "short_name": "wall_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_fnd_grnd_cs",
-          "display_name": "wall_fnd_grnd_cs",
-          "short_name": "wall_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_int_fin_ins_unfin",
-          "display_name": "wall_int_fin_ins_unfin",
-          "short_name": "wall_int_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_int_fin_unins_fin",
-          "display_name": "wall_int_fin_unins_fin",
-          "short_name": "wall_int_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "wall_int_unfin_unins_unfin",
-          "display_name": "wall_int_unfin_unins_unfin",
-          "short_name": "wall_int_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "living_space_footing_construction",
-          "display_name": "living_space_footing_construction",
-          "short_name": "living_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "garage_space_footing_construction",
-          "display_name": "garage_space_footing_construction",
-          "short_name": "garage_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "door",
-          "display_name": "door",
-          "short_name": "door",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_living_space",
-          "display_name": "residential_furniture_construction_living_space",
-          "short_name": "residential_furniture_construction_living_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_living_space_story_2",
-          "display_name": "residential_furniture_construction_living_space_story_2",
-          "short_name": "residential_furniture_construction_living_space_story_2",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_unfinished_basement_space",
-          "display_name": "residential_furniture_construction_unfinished_basement_space",
-          "short_name": "residential_furniture_construction_unfinished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_finished_basement_space",
-          "display_name": "residential_furniture_construction_finished_basement_space",
-          "short_name": "residential_furniture_construction_finished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        },
-        {
-          "name": "residential_furniture_construction_garage_space",
-          "display_name": "residential_furniture_construction_garage_space",
-          "short_name": "residential_furniture_construction_garage_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "checked": true
-        }
-      ],
-      "attributes": [
-        {
-          "name": "Measure Type",
-          "display_name": "Measure Type",
-          "value": "ReportingMeasure"
-        }
-      ],
-      "arguments": [
-        {
-          "specialRowId": "optionDelete",
-          "$$hashKey": "uiGrid-009E",
-          "variable": false,
-          "option_1": "option_1"
-        },
-        {
-          "specialRowId": "optionName",
-          "type": "String",
-          "$$hashKey": "uiGrid-009G",
-          "variable": false,
-          "option_1": "Option 1 Name"
-        },
-        {
-          "specialRowId": "optionDescription",
-          "type": "String",
-          "$$hashKey": "uiGrid-009I",
-          "variable": false,
-          "option_1": "Option 1 Description: TODO"
-        },
-        {
-          "name": "building_type",
-          "display_name": "Building Type",
-          "description": "",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "Residential",
-          "choice_values": [
-            "Residential",
-            "Commercial"
-          ],
-          "choice_display_names": [
-            "Residential",
-            "Commercial"
-          ],
-          "variable": false,
-          "$$hashKey": "object:13165",
-          "display_name_short": "building_type",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [
-              "Residential",
-              "Commercial"
-            ],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "Residential",
-            "minimum": "Residential",
-            "mean": "Residential",
-            "deltaX": "Residential",
-            "stdDev": "Residential",
-            "default_value": "Residential"
-          },
-          "option_1": "Commercial"
-        }
-      ],
-      "edit": "",
-      "status": "",
-      "bcl_update": false,
-      "location": "my",
-      "add": "",
-      "open": false,
-      "addedToProject": true,
-      "date": "10/25/2018",
-      "author": "",
-      "type": "ReportingMeasure",
-      "seed": "EmptySeedModel.osm",
-      "workflow_index": 3,
-      "options": [
-        {
-          "id": "option_1",
-          "arguments": [
-            {
-              "name": "building_type",
-              "value": "Commercial"
-            }
-          ],
-          "name": "Option 1 Name",
-          "description": "Option 1 Description: TODO"
-        }
-      ],
-      "instanceId": 0.8152180276502143,
-      "skip": false,
-      "$$hashKey": "object:13851",
-      "outputMeasure": true,
-      "userDefinedOutputs": [],
-      "analysisOutputs": [
-        {
-          "name": "floor_fin_ins_unfin_attic",
-          "display_name": "floor_fin_ins_unfin_attic",
-          "short_name": "floor_fin_ins_unfin_attic",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18379",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_fin_ins_unfin",
-          "display_name": "floor_fin_ins_unfin",
-          "short_name": "floor_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18380",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_fin_unins_fin",
-          "display_name": "floor_fin_unins_fin",
-          "short_name": "floor_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18381",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_unfin_unins_unfin",
-          "display_name": "floor_unfin_unins_unfin",
-          "short_name": "floor_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18382",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_fnd_grnd_fin_b",
-          "display_name": "floor_fnd_grnd_fin_b",
-          "short_name": "floor_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18383",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_b",
-          "display_name": "floor_fnd_grnd_unfin_b",
-          "short_name": "floor_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18384",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_fnd_grnd_fin_slab",
-          "display_name": "floor_fnd_grnd_fin_slab",
-          "short_name": "floor_fnd_grnd_fin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18385",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_fnd_grnd_unfin_slab",
-          "display_name": "floor_fnd_grnd_unfin_slab",
-          "short_name": "floor_fnd_grnd_unfin_slab",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18386",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_unfin_b_ins_fin",
-          "display_name": "floor_unfin_b_ins_fin",
-          "short_name": "floor_unfin_b_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18387",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_cs_ins_fin",
-          "display_name": "floor_cs_ins_fin",
-          "short_name": "floor_cs_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18388",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_pb_ins_fin",
-          "display_name": "floor_pb_ins_fin",
-          "short_name": "floor_pb_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18389",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "floor_fnd_grnd_cs",
-          "display_name": "floor_fnd_grnd_cs",
-          "short_name": "floor_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18390",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "roof_unfin_unins_ext",
-          "display_name": "roof_unfin_unins_ext",
-          "short_name": "roof_unfin_unins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18391",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "roof_unfin_ins_ext",
-          "display_name": "roof_unfin_ins_ext",
-          "short_name": "roof_unfin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18392",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "roof_fin_ins_ext",
-          "display_name": "roof_fin_ins_ext",
-          "short_name": "roof_fin_ins_ext",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18393",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_ext_ins_fin",
-          "display_name": "wall_ext_ins_fin",
-          "short_name": "wall_ext_ins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18394",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_ext_ins_unfin",
-          "display_name": "wall_ext_ins_unfin",
-          "short_name": "wall_ext_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18395",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_ext_unins_unfin",
-          "display_name": "wall_ext_unins_unfin",
-          "short_name": "wall_ext_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18396",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_fnd_grnd_fin_b",
-          "display_name": "wall_fnd_grnd_fin_b",
-          "short_name": "wall_fnd_grnd_fin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18397",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_fnd_grnd_unfin_b",
-          "display_name": "wall_fnd_grnd_unfin_b",
-          "short_name": "wall_fnd_grnd_unfin_b",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18398",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_fnd_grnd_cs",
-          "display_name": "wall_fnd_grnd_cs",
-          "short_name": "wall_fnd_grnd_cs",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18399",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_int_fin_ins_unfin",
-          "display_name": "wall_int_fin_ins_unfin",
-          "short_name": "wall_int_fin_ins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18400",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_int_fin_unins_fin",
-          "display_name": "wall_int_fin_unins_fin",
-          "short_name": "wall_int_fin_unins_fin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18401",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "wall_int_unfin_unins_unfin",
-          "display_name": "wall_int_unfin_unins_unfin",
-          "short_name": "wall_int_unfin_unins_unfin",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18402",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "living_space_footing_construction",
-          "display_name": "living_space_footing_construction",
-          "short_name": "living_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18403",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "garage_space_footing_construction",
-          "display_name": "garage_space_footing_construction",
-          "short_name": "garage_space_footing_construction",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18404",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "door",
-          "display_name": "door",
-          "short_name": "door",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18405",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "residential_furniture_construction_living_space",
-          "display_name": "residential_furniture_construction_living_space",
-          "short_name": "residential_furniture_construction_living_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18406",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "residential_furniture_construction_living_space_story_2",
-          "display_name": "residential_furniture_construction_living_space_story_2",
-          "short_name": "residential_furniture_construction_living_space_story_2",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18407",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "residential_furniture_construction_unfinished_basement_space",
-          "display_name": "residential_furniture_construction_unfinished_basement_space",
-          "short_name": "residential_furniture_construction_unfinished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18408",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "residential_furniture_construction_finished_basement_space",
-          "display_name": "residential_furniture_construction_finished_basement_space",
-          "short_name": "residential_furniture_construction_finished_basement_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18409",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        },
-        {
-          "name": "residential_furniture_construction_garage_space",
-          "display_name": "residential_furniture_construction_garage_space",
-          "short_name": "residential_furniture_construction_garage_space",
-          "description": "",
-          "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:18410",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "ua_report",
-          "measure_class_name": "UAReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
-        }
-      ],
-      "numberOfOptions": 1
+      "$$hashKey": "object:15284",
+      "outputMeasure": false,
+      "numberOfOptions": 0
     }
   ],
   "filesToInclude": [
@@ -2822,9 +1673,8 @@
       "weatherFile": "Placeholder.epw",
       "create_doe_prototype_building_2_2": "MediumOffice_5B",
       "timeseries_csv_export": "None",
-      "thermal_capacitance_report": "Option 1 Name",
-      "ua_report": "Option 1 Name",
-      "$$hashKey": "uiGrid-01B8"
+      "$$hashKey": "uiGrid-01B8",
+      "construction_properties_report": "Option 1 Name"
     },
     {
       "name": "Alternative 2",
@@ -2832,9 +1682,8 @@
       "weatherFile": "Placeholder.epw",
       "create_doe_prototype_building_2_2": "SecondarySchool_5B",
       "timeseries_csv_export": "None",
-      "thermal_capacitance_report": "Option 1 Name",
-      "ua_report": "Option 1 Name",
-      "$$hashKey": "uiGrid-01BA"
+      "$$hashKey": "uiGrid-01BA",
+      "construction_properties_report": "Option 1 Name"
     },
     {
       "name": "Alternative 3",
@@ -2842,9 +1691,8 @@
       "weatherFile": "Placeholder.epw",
       "create_doe_prototype_building_2_2": "LargeHotel_5B",
       "timeseries_csv_export": "None",
-      "thermal_capacitance_report": "Option 1 Name",
-      "ua_report": "Option 1 Name",
-      "$$hashKey": "uiGrid-01BC"
+      "$$hashKey": "uiGrid-01BC",
+      "construction_properties_report": "Option 1 Name"
     },
     {
       "name": "Alternative 4",
@@ -2852,9 +1700,8 @@
       "weatherFile": "Placeholder.epw",
       "create_doe_prototype_building_2_2": "RetailStandalone_5B",
       "timeseries_csv_export": "None",
-      "thermal_capacitance_report": "Option 1 Name",
-      "ua_report": "Option 1 Name",
-      "$$hashKey": "uiGrid-01BE"
+      "$$hashKey": "uiGrid-01BE",
+      "construction_properties_report": "Option 1 Name"
     },
     {
       "name": "Alternative 5",
@@ -2862,9 +1709,8 @@
       "weatherFile": "Placeholder.epw",
       "create_doe_prototype_building_2_2": "FullServiceRestaurant_5B",
       "timeseries_csv_export": "None",
-      "thermal_capacitance_report": "Option 1 Name",
-      "ua_report": "Option 1 Name",
-      "$$hashKey": "uiGrid-01BG"
+      "$$hashKey": "uiGrid-01BG",
+      "construction_properties_report": "Option 1 Name"
     },
     {
       "name": "Alternative 6",
@@ -2872,9 +1718,8 @@
       "weatherFile": "Placeholder.epw",
       "create_doe_prototype_building_2_2": "Hospital_5B",
       "timeseries_csv_export": "None",
-      "thermal_capacitance_report": "Option 1 Name",
-      "ua_report": "Option 1 Name",
-      "$$hashKey": "uiGrid-01BI"
+      "$$hashKey": "uiGrid-01BI",
+      "construction_properties_report": "Option 1 Name"
     },
     {
       "name": "Alternative 7",
@@ -2882,9 +1727,8 @@
       "weatherFile": "Placeholder.epw",
       "create_doe_prototype_building_2_2": "MidriseApartment_5A",
       "timeseries_csv_export": "None",
-      "thermal_capacitance_report": "Option 1 Name",
-      "ua_report": "Option 1 Name",
-      "$$hashKey": "uiGrid-01BK"
+      "$$hashKey": "uiGrid-01BK",
+      "construction_properties_report": "Option 1 Name"
     }
   ],
   "analysisID": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf\r",
@@ -2893,7 +1737,7 @@
       "name": "Alternative 1",
       "id": "2d22c1ad-64d4-42c6-a2ea-0531ace49839",
       "run": false,
-      "modified": false,
+      "modified": true,
       "selected": false,
       "_id": "2d22c1ad-64d4-42c6-a2ea-0531ace49839",
       "analysis_id": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf",
@@ -3512,7 +2356,7 @@
       "name": "Alternative 2",
       "id": "7da61179-6c14-41e0-b52a-cf9db55a0c17",
       "run": false,
-      "modified": false,
+      "modified": true,
       "selected": false,
       "_id": "7da61179-6c14-41e0-b52a-cf9db55a0c17",
       "analysis_id": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf",
@@ -4725,7 +3569,7 @@
       "name": "Alternative 3",
       "id": "ed8b1457-65dc-4512-ae13-d0b3724414e3",
       "run": false,
-      "modified": false,
+      "modified": true,
       "selected": false,
       "_id": "ed8b1457-65dc-4512-ae13-d0b3724414e3",
       "analysis_id": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf",
@@ -5600,7 +4444,7 @@
       "name": "Alternative 4",
       "id": "f41d0825-c105-4c33-ab80-d3ba63515352",
       "run": false,
-      "modified": false,
+      "modified": true,
       "selected": false,
       "_id": "f41d0825-c105-4c33-ab80-d3ba63515352",
       "analysis_id": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf",
@@ -5916,7 +4760,7 @@
       "name": "Alternative 5",
       "id": "42225d3f-02bd-44de-86d8-d12410d83780",
       "run": false,
-      "modified": false,
+      "modified": true,
       "selected": false,
       "_id": "42225d3f-02bd-44de-86d8-d12410d83780",
       "analysis_id": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf",
@@ -6367,7 +5211,7 @@
       "name": "Alternative 6",
       "id": "d0428986-3e37-408b-9be8-191a1261da30",
       "run": false,
-      "modified": false,
+      "modified": true,
       "selected": false,
       "_id": "d0428986-3e37-408b-9be8-191a1261da30",
       "analysis_id": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf",
@@ -7722,7 +6566,7 @@
       "name": "Alternative 7",
       "id": "8d603d50-81de-4250-9484-5f83dc820d6c",
       "run": false,
-      "modified": false,
+      "modified": true,
       "selected": false,
       "_id": "8d603d50-81de-4250-9484-5f83dc820d6c",
       "analysis_id": "abc38b2c-49f4-45e7-80cc-5c90e5d3b7bf",

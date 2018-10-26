@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>timeseries_csv_export</name>
   <uid>2a3442c1-944d-4e91-9e11-11e0cf368c64</uid>
-  <version_id>7fb20d6f-b060-420e-9dfa-afbc4f3e44bf</version_id>
-  <version_modified>20181025T223948Z</version_modified>
+  <version_id>e51c9ad8-12c3-49c0-a5a4-dfa98631a7e6</version_id>
+  <version_modified>20181026T163239Z</version_modified>
   <xml_checksum>15BF4E57</xml_checksum>
   <class_name>TimeseriesCSVExport</class_name>
   <display_name>Timeseries CSV Export</display_name>

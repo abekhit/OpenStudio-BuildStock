@@ -136,9 +136,9 @@
       "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/ResidentialSimulationControls",
       "uid": "874f921e-8f3c-458a-a82f-01b7d51a547e",
       "uuid": "{874f921e-8f3c-458a-a82f-01b7d51a547e}",
-      "version_id": "2ac3c919-bafd-45dd-bdf7-5b5005fadf24",
-      "version_uuid": "{2ac3c919-bafd-45dd-bdf7-5b5005fadf24}",
-      "version_modified": "20181026T153545Z",
+      "version_id": "f78a604e-2425-4713-ad61-4aa65d679a55",
+      "version_uuid": "{f78a604e-2425-4713-ad61-4aa65d679a55}",
+      "version_modified": "20181026T163239Z",
       "xml_checksum": "2C38F48B",
       "display_name": "Set Residential Simulation Controls",
       "class_name": "ResidentialSimulationControls",
@@ -288,7 +288,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.8855621186385847,
+      "instanceId": 0.3822492056987301,
       "skip": false,
       "$$hashKey": "object:21697",
       "outputMeasure": false
@@ -331,7 +331,7 @@
             "variableSetting": "Pivot",
             "distribution": "Integer Sequence",
             "discreteVariables": [],
-            "maximum": 10,
+            "maximum": 500,
             "minimum": 1,
             "mean": 0,
             "deltaX": 0,
@@ -447,7 +447,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.1323488716143273,
+      "instanceId": 0.7680333320487456,
       "skip": false,
       "$$hashKey": "object:34492",
       "showWarningText": false,
@@ -3279,7 +3279,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.487810581326928,
+      "instanceId": 0.23745546784924332,
       "skip": true,
       "$$hashKey": "object:31044",
       "showWarningText": false,
@@ -6111,7 +6111,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.8298184303109775,
+      "instanceId": 0.3371308582389341,
       "skip": true,
       "showWarningText": false,
       "$$hashKey": "object:33811",
@@ -6996,7 +6996,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.21354477147141293,
+      "instanceId": 0.6803193491886153,
       "skip": false,
       "$$hashKey": "object:12818",
       "outputMeasure": true,
@@ -8588,7 +8588,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 5,
       "options": [],
-      "instanceId": 0.5021255471450574,
+      "instanceId": 0.44892692893805997,
       "skip": false,
       "$$hashKey": "object:15382",
       "outputMeasure": true,
@@ -9344,9 +9344,9 @@
       "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/ConstructionPropertiesReport",
       "uid": "0fc173e6-a4d0-416c-80ad-f68e85845657",
       "uuid": "{0fc173e6-a4d0-416c-80ad-f68e85845657}",
-      "version_id": "768903f8-272a-4622-8d92-3c8b30f1405b",
-      "version_uuid": "{768903f8-272a-4622-8d92-3c8b30f1405b}",
-      "version_modified": "20181026T160625Z",
+      "version_id": "fade8907-a836-4e23-a75d-fb43714db6bb",
+      "version_uuid": "{fade8907-a836-4e23-a75d-fb43714db6bb}",
+      "version_modified": "20181026T163239Z",
       "xml_checksum": "6043863C",
       "display_name": "Construction Properties Report",
       "class_name": "ConstructionPropertiesReport",
@@ -9361,12 +9361,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70727",
+          "$$hashKey": "object:10332",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fin_ins_unfin",
@@ -9375,12 +9372,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70728",
+          "$$hashKey": "object:10333",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fin_unins_fin",
@@ -9389,12 +9383,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70729",
+          "$$hashKey": "object:10334",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_unfin_unins_unfin",
@@ -9403,12 +9394,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70730",
+          "$$hashKey": "object:10335",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_fin_b",
@@ -9417,12 +9405,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70731",
+          "$$hashKey": "object:10336",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_unfin_b",
@@ -9431,12 +9416,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70732",
+          "$$hashKey": "object:10337",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_fin_slab",
@@ -9445,12 +9427,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70733",
+          "$$hashKey": "object:10338",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_unfin_slab",
@@ -9459,12 +9438,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70734",
+          "$$hashKey": "object:10339",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_unfin_b_ins_fin",
@@ -9473,12 +9449,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70735",
+          "$$hashKey": "object:10340",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_cs_ins_fin",
@@ -9487,12 +9460,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70736",
+          "$$hashKey": "object:10341",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_pb_ins_fin",
@@ -9501,12 +9471,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70737",
+          "$$hashKey": "object:10342",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_cs",
@@ -9515,12 +9482,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70738",
+          "$$hashKey": "object:10343",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_roof_unfin_unins_ext",
@@ -9529,12 +9493,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70739",
+          "$$hashKey": "object:10344",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_roof_unfin_ins_ext",
@@ -9543,12 +9504,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70740",
+          "$$hashKey": "object:10345",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_roof_fin_ins_ext",
@@ -9557,12 +9515,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70741",
+          "$$hashKey": "object:10346",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_ext_ins_fin",
@@ -9571,12 +9526,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70742",
+          "$$hashKey": "object:10347",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_ext_ins_unfin",
@@ -9585,12 +9537,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70743",
+          "$$hashKey": "object:10348",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_ext_unins_unfin",
@@ -9599,12 +9548,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70744",
+          "$$hashKey": "object:10349",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_fnd_grnd_fin_b",
@@ -9613,12 +9559,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70745",
+          "$$hashKey": "object:10350",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_fnd_grnd_unfin_b",
@@ -9627,12 +9570,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70746",
+          "$$hashKey": "object:10351",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_fnd_grnd_cs",
@@ -9641,12 +9581,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70747",
+          "$$hashKey": "object:10352",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_int_fin_ins_unfin",
@@ -9655,12 +9592,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70748",
+          "$$hashKey": "object:10353",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_int_fin_unins_fin",
@@ -9669,12 +9603,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70749",
+          "$$hashKey": "object:10354",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_int_unfin_unins_unfin",
@@ -9683,12 +9614,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70750",
+          "$$hashKey": "object:10355",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_living_space_footing_construction",
@@ -9697,12 +9625,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70751",
+          "$$hashKey": "object:10356",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_garage_space_footing_construction",
@@ -9711,12 +9636,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70752",
+          "$$hashKey": "object:10357",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_door",
@@ -9725,12 +9647,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70753",
+          "$$hashKey": "object:10358",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_living_space",
@@ -9739,12 +9658,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70754",
+          "$$hashKey": "object:10359",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_living_space_story_2",
@@ -9753,12 +9669,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70755",
+          "$$hashKey": "object:10360",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_unfinished_basement_space",
@@ -9767,12 +9680,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70756",
+          "$$hashKey": "object:10361",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_finished_basement_space",
@@ -9781,12 +9691,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70757",
+          "$$hashKey": "object:10362",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_garage_space",
@@ -9795,12 +9702,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70758",
+          "$$hashKey": "object:10363",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_living_zone",
@@ -9809,12 +9713,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70759",
+          "$$hashKey": "object:10364",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_garage_zone",
@@ -9823,12 +9724,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70760",
+          "$$hashKey": "object:10365",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_unfinished_basement_zone",
@@ -9837,12 +9735,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70761",
+          "$$hashKey": "object:10366",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_finished_basement_zone",
@@ -9851,12 +9746,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70762",
+          "$$hashKey": "object:10367",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_crawl_zone",
@@ -9865,12 +9757,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70763",
+          "$$hashKey": "object:10368",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_unfinished_attic_zone",
@@ -9879,12 +9768,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70764",
+          "$$hashKey": "object:10369",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fin_ins_unfin_attic",
@@ -9893,12 +9779,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70765",
+          "$$hashKey": "object:10370",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fin_ins_unfin",
@@ -9907,12 +9790,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70766",
+          "$$hashKey": "object:10371",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fin_unins_fin",
@@ -9921,12 +9801,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70767",
+          "$$hashKey": "object:10372",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_unfin_unins_unfin",
@@ -9935,12 +9812,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70768",
+          "$$hashKey": "object:10373",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_fin_b",
@@ -9949,12 +9823,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70769",
+          "$$hashKey": "object:10374",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_unfin_b",
@@ -9963,12 +9834,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70770",
+          "$$hashKey": "object:10375",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_fin_slab",
@@ -9977,12 +9845,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70771",
+          "$$hashKey": "object:10376",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_unfin_slab",
@@ -9991,12 +9856,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70772",
+          "$$hashKey": "object:10377",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_unfin_b_ins_fin",
@@ -10005,12 +9867,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70773",
+          "$$hashKey": "object:10378",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_cs_ins_fin",
@@ -10019,12 +9878,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70774",
+          "$$hashKey": "object:10379",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_pb_ins_fin",
@@ -10033,12 +9889,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70775",
+          "$$hashKey": "object:10380",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_cs",
@@ -10047,12 +9900,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70776",
+          "$$hashKey": "object:10381",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_roof_unfin_unins_ext",
@@ -10061,12 +9911,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70777",
+          "$$hashKey": "object:10382",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_roof_unfin_ins_ext",
@@ -10075,12 +9922,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70778",
+          "$$hashKey": "object:10383",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_roof_fin_ins_ext",
@@ -10089,12 +9933,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70779",
+          "$$hashKey": "object:10384",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_ext_ins_fin",
@@ -10103,12 +9944,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70780",
+          "$$hashKey": "object:10385",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_ext_ins_unfin",
@@ -10117,12 +9955,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70781",
+          "$$hashKey": "object:10386",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_ext_unins_unfin",
@@ -10131,12 +9966,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70782",
+          "$$hashKey": "object:10387",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_fnd_grnd_fin_b",
@@ -10145,12 +9977,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70783",
+          "$$hashKey": "object:10388",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_fnd_grnd_unfin_b",
@@ -10159,12 +9988,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70784",
+          "$$hashKey": "object:10389",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_fnd_grnd_cs",
@@ -10173,12 +9999,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70785",
+          "$$hashKey": "object:10390",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_int_fin_ins_unfin",
@@ -10187,12 +10010,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70786",
+          "$$hashKey": "object:10391",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_int_fin_unins_fin",
@@ -10201,12 +10021,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70787",
+          "$$hashKey": "object:10392",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_int_unfin_unins_unfin",
@@ -10215,12 +10032,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70788",
+          "$$hashKey": "object:10393",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_living_space_footing_construction",
@@ -10229,12 +10043,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70789",
+          "$$hashKey": "object:10394",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_garage_space_footing_construction",
@@ -10243,12 +10054,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70790",
+          "$$hashKey": "object:10395",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_door",
@@ -10257,12 +10065,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70791",
+          "$$hashKey": "object:10396",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_living_space",
@@ -10271,12 +10076,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70792",
+          "$$hashKey": "object:10397",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_living_space_story_2",
@@ -10285,12 +10087,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70793",
+          "$$hashKey": "object:10398",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_unfinished_basement_space",
@@ -10299,12 +10098,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70794",
+          "$$hashKey": "object:10399",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_finished_basement_space",
@@ -10313,12 +10109,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70795",
+          "$$hashKey": "object:10400",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_garage_space",
@@ -10327,12 +10120,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70796",
+          "$$hashKey": "object:10401",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_living_zone",
@@ -10341,12 +10131,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70797",
+          "$$hashKey": "object:10402",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_garage_zone",
@@ -10355,12 +10142,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70798",
+          "$$hashKey": "object:10403",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_unfinished_basement_zone",
@@ -10369,12 +10153,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70799",
+          "$$hashKey": "object:10404",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_finished_basement_zone",
@@ -10383,12 +10164,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70800",
+          "$$hashKey": "object:10405",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_crawl_zone",
@@ -10397,12 +10175,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70801",
+          "$$hashKey": "object:10406",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_unfinished_attic_zone",
@@ -10411,12 +10186,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70802",
+          "$$hashKey": "object:10407",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         }
       ],
       "attributes": [
@@ -10449,7 +10221,7 @@
             "stdDev": true,
             "default_value": true
           },
-          "$$hashKey": "object:67383"
+          "$$hashKey": "object:6972"
         }
       ],
       "edit": "",
@@ -10465,9 +10237,9 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 6,
       "options": [],
-      "instanceId": 0.39832519060192584,
+      "instanceId": 0.8123003317788249,
       "skip": false,
-      "$$hashKey": "object:67340",
+      "$$hashKey": "object:6929",
       "outputMeasure": true,
       "userDefinedOutputs": [],
       "analysisOutputs": [
@@ -10478,12 +10250,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70727",
+          "$$hashKey": "object:10332",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fin_ins_unfin",
@@ -10492,12 +10261,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70728",
+          "$$hashKey": "object:10333",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fin_unins_fin",
@@ -10506,12 +10272,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70729",
+          "$$hashKey": "object:10334",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_unfin_unins_unfin",
@@ -10520,12 +10283,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70730",
+          "$$hashKey": "object:10335",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_fin_b",
@@ -10534,12 +10294,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70731",
+          "$$hashKey": "object:10336",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_unfin_b",
@@ -10548,12 +10305,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70732",
+          "$$hashKey": "object:10337",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_fin_slab",
@@ -10562,12 +10316,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70733",
+          "$$hashKey": "object:10338",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_unfin_slab",
@@ -10576,12 +10327,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70734",
+          "$$hashKey": "object:10339",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_unfin_b_ins_fin",
@@ -10590,12 +10338,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70735",
+          "$$hashKey": "object:10340",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_cs_ins_fin",
@@ -10604,12 +10349,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70736",
+          "$$hashKey": "object:10341",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_pb_ins_fin",
@@ -10618,12 +10360,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70737",
+          "$$hashKey": "object:10342",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_floor_fnd_grnd_cs",
@@ -10632,12 +10371,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70738",
+          "$$hashKey": "object:10343",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_roof_unfin_unins_ext",
@@ -10646,12 +10382,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70739",
+          "$$hashKey": "object:10344",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_roof_unfin_ins_ext",
@@ -10660,12 +10393,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70740",
+          "$$hashKey": "object:10345",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_roof_fin_ins_ext",
@@ -10674,12 +10404,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70741",
+          "$$hashKey": "object:10346",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_ext_ins_fin",
@@ -10688,12 +10415,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70742",
+          "$$hashKey": "object:10347",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_ext_ins_unfin",
@@ -10702,12 +10426,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70743",
+          "$$hashKey": "object:10348",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_ext_unins_unfin",
@@ -10716,12 +10437,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70744",
+          "$$hashKey": "object:10349",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_fnd_grnd_fin_b",
@@ -10730,12 +10448,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70745",
+          "$$hashKey": "object:10350",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_fnd_grnd_unfin_b",
@@ -10744,12 +10459,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70746",
+          "$$hashKey": "object:10351",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_fnd_grnd_cs",
@@ -10758,12 +10470,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70747",
+          "$$hashKey": "object:10352",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_int_fin_ins_unfin",
@@ -10772,12 +10481,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70748",
+          "$$hashKey": "object:10353",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_int_fin_unins_fin",
@@ -10786,12 +10492,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70749",
+          "$$hashKey": "object:10354",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_wall_int_unfin_unins_unfin",
@@ -10800,12 +10503,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70750",
+          "$$hashKey": "object:10355",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_living_space_footing_construction",
@@ -10814,12 +10514,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70751",
+          "$$hashKey": "object:10356",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_garage_space_footing_construction",
@@ -10828,12 +10525,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70752",
+          "$$hashKey": "object:10357",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_door",
@@ -10842,12 +10536,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70753",
+          "$$hashKey": "object:10358",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_living_space",
@@ -10856,12 +10547,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70754",
+          "$$hashKey": "object:10359",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_living_space_story_2",
@@ -10870,12 +10558,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70755",
+          "$$hashKey": "object:10360",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_unfinished_basement_space",
@@ -10884,12 +10569,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70756",
+          "$$hashKey": "object:10361",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_finished_basement_space",
@@ -10898,12 +10580,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70757",
+          "$$hashKey": "object:10362",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_residential_furniture_construction_garage_space",
@@ -10912,12 +10591,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70758",
+          "$$hashKey": "object:10363",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_living_zone",
@@ -10926,12 +10602,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70759",
+          "$$hashKey": "object:10364",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_garage_zone",
@@ -10940,12 +10613,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70760",
+          "$$hashKey": "object:10365",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_unfinished_basement_zone",
@@ -10954,12 +10624,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70761",
+          "$$hashKey": "object:10366",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_finished_basement_zone",
@@ -10968,12 +10635,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70762",
+          "$$hashKey": "object:10367",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_crawl_zone",
@@ -10982,12 +10646,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70763",
+          "$$hashKey": "object:10368",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "thermal_mass_unfinished_attic_zone",
@@ -10996,12 +10657,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70764",
+          "$$hashKey": "object:10369",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fin_ins_unfin_attic",
@@ -11010,12 +10668,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70765",
+          "$$hashKey": "object:10370",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fin_ins_unfin",
@@ -11024,12 +10679,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70766",
+          "$$hashKey": "object:10371",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fin_unins_fin",
@@ -11038,12 +10690,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70767",
+          "$$hashKey": "object:10372",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_unfin_unins_unfin",
@@ -11052,12 +10701,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70768",
+          "$$hashKey": "object:10373",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_fin_b",
@@ -11066,12 +10712,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70769",
+          "$$hashKey": "object:10374",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_unfin_b",
@@ -11080,12 +10723,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70770",
+          "$$hashKey": "object:10375",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_fin_slab",
@@ -11094,12 +10734,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70771",
+          "$$hashKey": "object:10376",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_unfin_slab",
@@ -11108,12 +10745,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70772",
+          "$$hashKey": "object:10377",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_unfin_b_ins_fin",
@@ -11122,12 +10756,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70773",
+          "$$hashKey": "object:10378",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_cs_ins_fin",
@@ -11136,12 +10767,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70774",
+          "$$hashKey": "object:10379",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_pb_ins_fin",
@@ -11150,12 +10778,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70775",
+          "$$hashKey": "object:10380",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_floor_fnd_grnd_cs",
@@ -11164,12 +10789,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70776",
+          "$$hashKey": "object:10381",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_roof_unfin_unins_ext",
@@ -11178,12 +10800,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70777",
+          "$$hashKey": "object:10382",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_roof_unfin_ins_ext",
@@ -11192,12 +10811,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70778",
+          "$$hashKey": "object:10383",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_roof_fin_ins_ext",
@@ -11206,12 +10822,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70779",
+          "$$hashKey": "object:10384",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_ext_ins_fin",
@@ -11220,12 +10833,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70780",
+          "$$hashKey": "object:10385",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_ext_ins_unfin",
@@ -11234,12 +10844,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70781",
+          "$$hashKey": "object:10386",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_ext_unins_unfin",
@@ -11248,12 +10855,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70782",
+          "$$hashKey": "object:10387",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_fnd_grnd_fin_b",
@@ -11262,12 +10866,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70783",
+          "$$hashKey": "object:10388",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_fnd_grnd_unfin_b",
@@ -11276,12 +10877,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70784",
+          "$$hashKey": "object:10389",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_fnd_grnd_cs",
@@ -11290,12 +10888,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70785",
+          "$$hashKey": "object:10390",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_int_fin_ins_unfin",
@@ -11304,12 +10899,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70786",
+          "$$hashKey": "object:10391",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_int_fin_unins_fin",
@@ -11318,12 +10910,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70787",
+          "$$hashKey": "object:10392",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_wall_int_unfin_unins_unfin",
@@ -11332,12 +10921,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70788",
+          "$$hashKey": "object:10393",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_living_space_footing_construction",
@@ -11346,12 +10932,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70789",
+          "$$hashKey": "object:10394",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_garage_space_footing_construction",
@@ -11360,12 +10943,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70790",
+          "$$hashKey": "object:10395",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_door",
@@ -11374,12 +10954,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70791",
+          "$$hashKey": "object:10396",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_living_space",
@@ -11388,12 +10965,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70792",
+          "$$hashKey": "object:10397",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_living_space_story_2",
@@ -11402,12 +10976,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70793",
+          "$$hashKey": "object:10398",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_unfinished_basement_space",
@@ -11416,12 +10987,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70794",
+          "$$hashKey": "object:10399",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_finished_basement_space",
@@ -11430,12 +10998,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70795",
+          "$$hashKey": "object:10400",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_residential_furniture_construction_garage_space",
@@ -11444,12 +11009,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70796",
+          "$$hashKey": "object:10401",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_living_zone",
@@ -11458,12 +11020,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70797",
+          "$$hashKey": "object:10402",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_garage_zone",
@@ -11472,12 +11031,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70798",
+          "$$hashKey": "object:10403",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_unfinished_basement_zone",
@@ -11486,12 +11042,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70799",
+          "$$hashKey": "object:10404",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_finished_basement_zone",
@@ -11500,12 +11053,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70800",
+          "$$hashKey": "object:10405",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_crawl_zone",
@@ -11514,12 +11064,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70801",
+          "$$hashKey": "object:10406",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         },
         {
           "name": "ua_unfinished_attic_zone",
@@ -11528,12 +11075,9 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:70802",
+          "$$hashKey": "object:10407",
           "checked": true,
-          "visualize": "true",
-          "measure_name": "construction_properties_report",
-          "measure_class_name": "ConstructionPropertiesReport",
-          "measure_uid": "0fc173e6-a4d0-416c-80ad-f68e85845657"
+          "visualize": "true"
         }
       ]
     },
@@ -11543,9 +11087,9 @@
       "directory": "C:/OpenStudio/OpenStudio-BuildStock/measures/TimeseriesCSVExport",
       "uid": "2a3442c1-944d-4e91-9e11-11e0cf368c64",
       "uuid": "{2a3442c1-944d-4e91-9e11-11e0cf368c64}",
-      "version_id": "4e501f9f-ab96-41a1-b0f4-197a61025cbd",
-      "version_uuid": "{4e501f9f-ab96-41a1-b0f4-197a61025cbd}",
-      "version_modified": "20181026T153545Z",
+      "version_id": "e51c9ad8-12c3-49c0-a5a4-dfa98631a7e6",
+      "version_uuid": "{e51c9ad8-12c3-49c0-a5a4-dfa98631a7e6}",
+      "version_modified": "20181026T163239Z",
       "xml_checksum": "15BF4E57",
       "display_name": "Timeseries CSV Export",
       "class_name": "TimeseriesCSVExport",
@@ -11694,7 +11238,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 7,
       "options": [],
-      "instanceId": 0.1267486497317658,
+      "instanceId": 0.31446349903467286,
       "skip": false,
       "$$hashKey": "object:15284",
       "outputMeasure": false
@@ -11741,7 +11285,7 @@
       "seed": "EmptySeedModel.osm",
       "workflow_index": 8,
       "options": [],
-      "instanceId": 0.1855762696957617,
+      "instanceId": 0.18034732217625726,
       "skip": false,
       "$$hashKey": "object:663249",
       "outputMeasure": false
@@ -11780,6 +11324,6 @@
     }
   },
   "designAlternatives": [],
-  "analysisID": null,
+  "analysisID": "",
   "datapoints": []
 }
